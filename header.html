@@ -1,0 +1,107 @@
+<header class="header-container">
+  <!-- FontAwesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  />
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap" rel="stylesheet">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-gradient-warning">
+    <div class="container-fluid d-flex align-items-center">
+      <!-- Logo centrado -->
+      <a class="navbar-brand text-center mx-auto d-lg-none" href="index.html">
+        <img src="img/tituloa.png" alt="Titulo" class="me-2" />
+      </a>
+      <!-- Logo para pantallas medianas y grandes -->
+      <a class="navbar-brand text-wrap d-none d-lg-block" href="index.html">
+        <img src="img/tituloa.png" alt="Titulo" class="me-2" />
+      </a>
+      <!-- Botón hamburguesa alineado con el logo en pantallas pequeñas -->
+      <button
+        class="navbar-toggler ms-2"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Abrir menú de navegación"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Menú de navegación -->
+      <div class="collapse navbar-collapse w-100" id="navbarNav">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              href="index.html"
+              >Inicio</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              href="cuaderno.html"
+              >Cuaderno Bomber</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              href="consejos.html"
+              >Trucos y Consejos</a
+            >
+          </li>
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              id="objetosDropdown"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Coleccionables
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="objetosDropdown">
+              <li>
+                <a
+                  class="dropdown-item"
+                  href="objetos1.html"
+                  >Objetos</a
+                >
+              </li>
+              <li>
+                <a
+                  class="dropdown-item"
+                  href="mascaras.html"
+                  >Máscaras</a
+                >
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              href="registro.html"
+              >Registro</a
+            >
+          </li>
+        </ul>
+        
+        <!-- Buscador -->
+        <form class="d-flex" role="search">
+          <input
+            class="form-control me-2 buscador"
+            type="search"
+            placeholder="Buscar"
+            aria-label="Campo de búsqueda"
+          />
+          <button class="btn btn-outline-success" type="submit" aria-label="Iniciar búsqueda">
+            <i class="fas fa-search"></i>
+          </button>
+        </form>
+      </div>
+    </div>
+  </nav>
+</header>

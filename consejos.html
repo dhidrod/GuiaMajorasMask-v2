@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trucos y Consejos - Majora's Mask</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <!-- FontAwesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <!-- Estilo Personalizado -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body class="d-flex flex-column">
+    <!-- Header -->
+    <div id="header"></div>
+
+    <!-- Reproductor de música global -->
+    <div id="music-player" aria-live="polite">
+      <button
+        id="globalMusicToggle"
+        class="music-toggle"
+        aria-label="Control de música"
+        data-playing="false"
+      >
+        <i class="fas fa-volume-mute"></i>
+        <span class="moon-indicator" aria-hidden="true"></span>
+      </button>
+      <audio id="globalAudio" loop aria-hidden="true">
+        <source src="" type="audio/mpeg" />
+      </audio>
+    </div>
+
+    <!-- Añade este script -->
+    <script src="js/global-audio.js"></script>
+
+
+    <!-- Hero Section Mejorada -->
+    <section class="advice-hero">
+      <div class="hero-overlay"></div>
+      <div class="container text-center position-relative z-2">
+        <div class="moon-symbol">
+          <svg viewBox="0 0 100 100" width="80" height="80">
+            <path
+              d="M50 15A35 35 0 1 1 15 50"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            />
+            <circle cx="50" cy="50" r="10" fill="currentColor" />
+          </svg>
+        </div>
+        <h1 class="hero-title">
+          <span class="title-gradient">Sabiduría de Termina</span>
+          <small class="subtitle">Trucos y Consejos Esenciales</small>
+        </h1>
+        <!-- CICLO LUNAR Y MÚSICA -->
+        <div class="time-counter">
+          <span class="moon-phase"></span>
+          <button
+            id="musicToggle"
+            class="sound-btn"
+            aria-label="Reproducir música"
+          >
+            <i class="fas fa-volume-mute"></i>
+          </button>
+        </div>
+
+
+      </div>
+    </section>
+
+    <!-- Contenido principal -->
+    <div class="container my-5 flex-grow-1">
+      <!-- Navegación -->
+      <ul class="nav nav-pills strategic-nav mb-4">
+        <li class="nav-item">
+          <button
+            class="nav-link active"
+            data-bs-toggle="tab"
+            data-bs-target="#trucos"
+          >
+            <i class="fas fa-magic"></i> Trucos
+          </button>
+        </li>
+        <li class="nav-item">
+          <button
+            class="nav-link"
+            data-bs-toggle="tab"
+            data-bs-target="#consejos"
+          >
+            <i class="fas fa-lightbulb"></i> Consejos
+          </button>
+        </li>
+      </ul>
+
+      <!-- Contenido de las pestañas -->
+      <div class="tab-content">
+        <!-- Trucos -->
+        <div class="tab-pane fade show active" id="trucos">
+          <div class="row row-cols-1 row-cols-md-2 g-4">
+            <!-- Tarjeta 1 -->
+            <div class="col">
+              <div class="card strategic-card h-100">
+                <div class="card-header-icon">
+                  <img
+                    src="img/Dogs_Racing.webp"
+                    alt="Carreras"
+                    class="card-icon-img"
+                  />
+                  <span class="badge bg-warning">Avanzado</span>
+                </div>
+                <div class="card-body">
+                  <h3 class="card-title">
+                    <i class="fas fa-dog me-2"></i>
+                    Dominio de Carreras Caninas
+                  </h3>
+                  <p class="card-text">
+                    Usa la Máscara de la Verdad para leer los pensamientos de
+                    los perros y elegir al ganador.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tarjeta 2 -->
+            <div class="col">
+              <div class="card strategic-card h-100">
+                <div class="card-header-icon">
+                  <img
+                    src="img/goron-roll.jpg"
+                    alt="Goron"
+                    class="card-icon-img"
+                  />
+                  <span class="badge bg-success">Básico</span>
+                </div>
+                <div class="card-body">
+                  <h3 class="card-title">
+                    <i class="fas fa-shield-alt me-2"></i>
+                    Evitar Daño por Caída
+                  </h3>
+                  <p class="card-text">
+                    Usa el rodar Goron justo antes de tocar el suelo para evitar
+                    daño.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Consejos -->
+        <div class="tab-pane fade" id="consejos">
+          <div class="row row-cols-1 row-cols-md-2 g-4">
+            <!-- Tarjeta 1 -->
+            <div class="col">
+              <div class="card strategic-card h-100">
+                <div class="card-body">
+                  <div class="card-icon-wrapper">
+                    <i class="fas fa-hourglass-half"></i>
+                  </div>
+                  <h3 class="card-title">Gestión del Tiempo</h3>
+                  <p class="card-text">
+                    Usa la Canción del Tiempo Invertida para ralentizar el
+                    tiempo.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tarjeta 2 -->
+            <div class="col">
+              <div class="card strategic-card h-100">
+                <div class="card-body">
+                  <div class="card-icon-wrapper">
+                    <i class="fas fa-coins"></i>
+                  </div>
+                  <h3 class="card-title">Duplicar Rupias</h3>
+                  <p class="card-text">
+                    Deposita tus rupias en el banco antes de viajar en el
+                    tiempo.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div id="footer"></div>
+
+    <!-- Scripts -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/cargarEncPie.js"></script>
+    <script src="js/strategic.js"></script>
+    <script src="js/moonfase.js"></script>
+
+    <!-- Botón flotante -->
+    <button id="backToTop" class="back-to-top-btn" aria-label="Volver arriba">
+      <i class="fas fa-chevron-up"></i>
+    </button>
+  </body>
+</html>

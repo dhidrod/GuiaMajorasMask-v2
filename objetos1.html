@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Objetos Principales - Guía Majora's Mask</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <!-- Estilo Personalizado -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body class="d-flex flex-column">
+    <!-- Header -->
+    <div id="header"></div>
+
+    <!-- Separador -->
+    <div class="container">
+      <hr class="my-4" />
+    </div>
+
+    <!-- Contenedor Principal -->
+    <main class="container mt-4 flex-grow-1">
+      <h1 class="text-center mb-4">Objetos Principales de Majora's Mask</h1>
+
+      <!-- Contenedor de Botones -->
+      <div class="row">
+        <!-- Objetos organizados en una cuadrícula de 6 por fila -->
+        <div class="col-6 col-md-2 mb-3">
+          <button
+            class="btn btn-outline-primary w-100"
+            data-target="object1"
+            data-bs-toggle="popover"
+            data-bs-placement="bottom"
+            data-bs-title="En contrucción..."
+            data-bs-content="La guía de este objeto aún está siendo preaparada. ¡Lamentamos las molestias! "
+          >
+            <img
+              src="img/obj/OoT_Ocarina_of_Time_Render.png"
+              alt="Ocarina del Tiempo"
+              class="object-image"
+            />
+            <p class="mt-2">Ocarina del Tiempo</p>
+          </button>
+        </div>
+        <div class="col-6 col-md-2 mb-3">
+          <button
+            class="btn btn-outline-primary w-100"
+            data-target="object2"
+            data-bs-toggle="popover"
+            data-bs-placement="bottom"
+            data-bs-title="En contrucción..."
+            data-bs-content="La guía de este objeto aún está siendo preaparada. ¡Lamentamos las molestias! "
+          >
+            <img
+              src="img/obj/MM_Hero's_Bow_Render.png"
+              alt="Arco del Héroe"
+              class="object-image"
+            />
+            <p class="mt-2">Arco del Héroe</p>
+          </button>
+        </div>
+        <div class="col-6 col-md-2 mb-3">
+          <button
+            class="btn btn-outline-primary w-100"
+            data-target="object3"
+            data-bs-toggle="popover"
+            data-bs-placement="bottom"
+            data-bs-title="En contrucción..."
+            data-bs-content="La guía de este objeto aún está siendo preaparada. ¡Lamentamos las molestias! "
+          >
+            <img
+              src="img/obj/OoT_Fire_Arrow_Render.png"
+              alt="Flecha de fuego"
+              class="object-image"
+            />
+            <p class="mt-2">Flecha de fuego</p>
+          </button>
+        </div>
+        <div class="col-6 col-md-2 mb-3">
+          <button
+            class="btn btn-outline-primary w-100"
+            data-target="object4"
+            data-bs-toggle="popover"
+            data-bs-placement="bottom"
+            data-bs-title="En contrucción..."
+            data-bs-content="La guía de este objeto aún está siendo preaparada. ¡Lamentamos las molestias! "
+          >
+            <img
+              src="img/obj/OoT_Ice_Arrow_Render.png"
+              alt="Flecha de hielo"
+              class="object-image"
+            />
+            <p class="mt-2">Flecha de hielo</p>
+          </button>
+        </div>
+        <div class="col-6 col-md-2 mb-3">
+          <button
+            class="btn btn-outline-primary w-100"
+            data-target="object5"
+            data-bs-toggle="popover"
+            data-bs-placement="bottom"
+            data-bs-title="En contrucción..."
+            data-bs-content="La guía de este objeto aún está siendo preaparada. ¡Lamentamos las molestias! "
+          >
+            <img
+              src="img/obj/OoT_Light_Arrow_Render.png"
+              alt="Flecha de luz"
+              class="object-image"
+            />
+            <p class="mt-2">Flecha de luz</p>
+          </button>
+        </div>
+        <div class="col-6 col-md-2 mb-3">
+          <button
+            class="btn btn-outline-primary w-100"
+            data-target="object6"
+            data-bs-toggle="popover"
+            data-bs-placement="bottom"
+            data-bs-title="En contrucción..."
+            data-bs-content="La guía de este objeto aún está siendo preaparada. ¡Lamentamos las molestias! "
+          >
+            <img
+              src="img/obj/MM_Moon's_Tear_Render.png"
+              alt="Lágrima de la luna"
+              class="object-image"
+            />
+            <p class="mt-2">Lágrima de la luna</p>
+          </button>
+        </div>
+        <div class="col-6 col-md-2 mb-3">
+          <button
+            class="btn btn-outline-primary w-100"
+            data-target="object6"
+            data-bs-toggle="popover"
+            data-bs-placement="bottom"
+            data-bs-title="En contrucción..."
+            data-bs-content="La guía de este objeto aún está siendo preaparada. ¡Lamentamos las molestias! "
+          >
+            <img
+              src="img/obj/OoT_Bomb_Render.png"
+              alt="Bombas"
+              class="object-image"
+            />
+            <p class="mt-2">Bombas</p>
+          </button>
+        </div>
+      </div>
+
+      <!-- Sección Dinámica -->
+      <div id="info-section" class="mt-5">
+        <h2 class="text-center">Selecciona un objeto para más información</h2>
+        <!-- Contenedor único para texto e imágenes -->
+        <div id="info-dynamic" class="text-center"></div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <div id="footer"></div>
+
+    <!-- Scripts -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/cargarEncPie.js"></script>
+    <script src="js/contenidoDinamico.js"></script>
+    <script>
+      const popoverTriggerList = document.querySelectorAll(
+        '[data-bs-toggle="popover"]'
+      );
+      const popoverList = [...popoverTriggerList].map(
+        (popoverTriggerEl) => new bootstrap.Popover(popoverTriggerEl)
+      );
+    </script>
+    <script src="js/iniToolTips.js"></script>
+
+    <script src="js/backtotop.js"></script>
+    <!-- Botón flotante -->
+    <button id="backToTop" class="back-to-top-btn" aria-label="Volver arriba">
+      <i class="fas fa-chevron-up"></i>
+    </button>
+  </body>
+</html>

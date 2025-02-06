@@ -1,0 +1,2161 @@
+@import "../../node_modules/bootstrap/scss/functions";
+
+// Colores de Bootstrap Personalizados
+$primary: #aab656;
+$secondary: #446a39;
+$success: #66b656;
+$info: #b69c56;
+$info: #e3b944;
+$warning: #b11c7f;
+$danger: #e66007;
+$light: #f8f9fa;
+$dark: #343a40;
+
+// Tooltips
+$tooltip-bg: #aab656;
+$tooltip-color: #242424;
+$tooltip-font-size: 16px;
+
+// Popover
+$popover-bg: #aab656;
+$popover-body-color: #242424;
+$popover-header-bg: #446a39;
+$popover-header-color: #aab656;
+$popover-font-size: 16px;
+$popover-arrow-width: 2rem;
+$popover-arrow-height: 1rem;
+
+// Input
+$input-focus-color: #aab656;
+$input-color: #446a39;
+$input-border-color: #6c7a3a;
+$input-bg: #222420;
+$input-placeholder-color: #868d56;
+
+// Botones
+$btn-border-width: 0px;
+$btn-border-radius: 15px;
+
+// Nav
+$navbar-dark-color: #b69c56;
+$navbar-dark-hover-color: #66b656;
+$navbar-dark-active-color: #aab656;
+$navbar-dark-disabled-color: #d3daa6;
+
+$nav-link-font-size: 20px;
+
+$dropdown-link-color: #b69c56;
+$dropdown-link-hover-color: #66b656;
+$dropdown-link-hover-bg: #2b3129;
+
+// Formulario
+$input-bg: #333331;
+
+$form-file-button-color: #2b3129;
+$form-file-button-bg: #b69c56;
+$form-file-button-hover-bg: #e4ca80;
+
+// Pestañas
+$nav-tabs-border-color: #b69c56;
+$nav-tabs-link-active-bg: #b69c56;
+$nav-tabs-link-active-border-color: #b69c56;
+$nav-tabs-link-hover-border-color: #d3daa6;
+$nav-link-color: #868d56;
+$nav-link-hover-color: #aab656;
+
+// Fuente
+// Importar fuente
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap");
+
+// Configurar fuente base
+body, li {
+  font-family: "Cinzel", serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Cinzel", serif;
+  font-weight: bold;
+}
+
+a,
+form,
+button,
+button p,
+tr th,
+.card-text {
+  font-family: "Cinzel", serif;
+  font-weight: bold;
+}
+
+label, select, option, input {
+  color: #aab656 !important;
+}
+
+button #boton-registro {
+background-color: #aab656;
+color: #2b3129;
+}
+
+$body-bg: #121212;
+$body-color: #f8f9fa;
+
+$enable-gradients: false;
+
+@import "../../node_modules/bootstrap/scss/variables";
+@import "../../node_modules/bootstrap/scss/mixins";
+
+// Colores personalizados
+$col-azul: #2b315d;
+$col-azul2: #525ca6;
+$col-azul3: #444b7c;
+$col-naranja: #8a5132;
+$col-naranja2: #a88e6f;
+$col-naranja3: #8b7152;
+$col-rosa: #97516b;
+$col-rosa2: #a57c82;
+$col-rosa3: #78575c;
+
+// Importar Bootstrap
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+// Estilo para las columnas de la tabla
+/*
+th {
+  position: relative;
+
+  &::after {
+    content: "\f06a"; // Icono de exclamación FontAwesome
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0.1;
+    transition: opacity 0.3s ease;
+  }
+
+  &:hover::after {
+    opacity: 1;
+  }
+
+}
+
+table .col-azul {
+  background-color: $col-azul;
+  color: #fff;
+}
+table .col-azul2 {
+  background-color: $col-azul2;
+  color: #fff;
+}
+table .col-azul3 {
+  background-color: $col-azul3;
+  color: #fff;
+}
+
+table .col-naranja {
+  background-color: $col-naranja;
+  color: #fff;
+}
+table .col-naranja2 {
+  background-color: $col-naranja2;
+  color: #fff;
+}
+table .col-naranja3 {
+  background-color: $col-naranja3;
+  color: #fff;
+}
+
+table .col-rosa {
+  background-color: $col-rosa;
+  color: #fff;
+}
+table .col-rosa2 {
+  background-color: $col-rosa2;
+  color: #fff;
+}
+table .col-rosa3 {
+  background-color: $col-rosa3;
+  color: #fff;
+}
+
+.cuaderno {
+  box-shadow: 10px 10px 15px 15px rgba(0, 0, 0, 0.33);
+  background-image: url("../img/fondoCuaderno.png");
+  background-position: center;
+  background-repeat: repeat;
+}
+
+table {
+  margin: 0;
+}
+
+#tabla {
+  background-color: rgba(0, 0, 0, 0);
+  margin: 0;
+}
+
+.table td,
+.table th {
+  vertical-align: middle;
+}*/
+
+
+
+html, body {
+  height: 100%; /* Asegura que el contenedor ocupe toda la pantalla */
+}
+
+body {
+  background-image: url("../img/fondo.png");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: repeat;
+  color: #fff;
+}
+
+// Icono del header
+.icono-logo {
+  width: 50px;
+  height: 50px;
+  white-space: normal;
+}
+
+.buscador {
+  width: 250px;
+}
+
+// Imágenes de máscaras
+.mask-image,
+.object-image {
+  width: 100%; // Ocupa el ancho del contenedor
+  height: 100px; // Altura fija
+  object-fit: cover; // Recorta proporcionalmente si es necesario
+}
+
+#main {
+  width: 100%;
+  flex-grow: 1;
+}
+
+/* Ajustes responsivos para el header */
+.navbar-brand {
+  img {
+    height: 100px; // Tamaño del logo
+    max-width: 100%;
+    object-fit: contain;
+  }
+}
+
+//Carrusel
+/*.carousel-inner {
+  height: 600px;
+}
+.carousel-item > img {
+  height: 900px;
+  object-fit: cover;
+}*/
+
+//Tarjetas
+.card-body {
+  color: #b69c56;
+}
+
+.card-footer button,
+.card-footer a,
+#boton-registro {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: background-color 0.3s;
+  background-color: #2b3129;
+  color: #b69c56;
+
+  font-family: "Cinzel", serif;
+  font-weight: bold;
+  &:hover {
+    background-color: #b69c56;
+    color: #2b3129;
+
+    transform: scale(1.08);
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+  }
+}
+
+// Estilo para máscaras deshabilitadas
+.disabled-mask {
+  pointer-events: none; // Evita interacciones
+  filter: grayscale(
+    100%
+  );
+
+  // Indicador de que el objeto aún está en desarrollo
+  &::after {
+    content: "PROXIMAMENTE";
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.5em;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+}
+
+.my-4 {
+  display: none !important;
+}
+
+@media (max-width: 990px) {
+  .my-4 {
+    display: block !important;
+  }
+
+  .buscador {
+    width: 100%;
+  }
+
+  /* Asegura que el menú aparezca debajo del botón hamburguesa */
+  .navbar-collapse {
+    position: relative;
+    top: 10px;
+    z-index: 1000;
+  }
+
+  table th,
+  table td {
+    font-size: 12px;
+    white-space: nowrap; /* Evita saltos de línea */
+  }
+}
+
+@media (max-width: 576px) {
+  // Ocultar carrusel en móviles
+  #carouselMajorasMask {
+    display: none !important;
+  }
+
+  .my-4 {
+    display: block !important;
+  }
+
+  .navbar {
+    text-align: center;
+  }
+
+  .buscador {
+    width: 100%;
+    margin: 0 auto;
+    display: block;
+  }
+
+  /* Asegura que el menú aparezca debajo del botón hamburguesa */
+  .navbar-collapse {
+    position: relative;
+    top: 10px;
+    z-index: 1000;
+  }
+
+  /* Centrar los elementos del menú desplegable */
+  .navbar-nav {
+    text-align: center;
+    width: 100%;
+  }
+
+  table th,
+  table td {
+    font-size: 12px;
+    white-space: nowrap; /* Evita saltos de línea */
+  }
+}
+
+
+
+
+
+// ================================================
+// VARIABLES DE CONTROL - AJUSTAR ESTOS VALORES
+// ================================================
+$orbital-size: 120%;      // Tamaño del área de órbita (recomendado 100-150%)
+$circle-size: 30px;       // Diámetro de los círculos
+$orbit-speed: 2s;         // Velocidad de rotación completa
+$color-speed: 1s;         // Velocidad transición de color
+$hover-shadow: 0 0 12px 3px rgba(170, 182, 86, 0.4); // Sombra hover (color primario)
+// ================================================
+// SOBREESCRIBIR ESTILOS DE BOOTSTRAP PARA LOS BOTONES
+// ================================================
+.mask-wrapper {
+  .btn {
+    // Estado normal
+    background-color: transparent !important;
+    border: none !important;
+    color: $light !important;
+    transition: box-shadow 0.3s ease !important;
+    
+    // Quitar todos los efectos de hover/focus de Bootstrap
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: transparent !important;
+      border-color: transparent !important;
+      color: $light !important;
+      transform: none !important;
+      box-shadow: none !important;
+      outline: none !important;
+    }
+    
+    // Quitar el efecto de "click" en móviles
+    &:active:focus {
+      box-shadow: none !important;
+    }
+  }
+}
+
+// ================================================
+// ANIMACIÓN DE CÍRCULOS ORBITANTES
+// ================================================
+
+// Contenedor principal de cada máscara
+.mask-wrapper {
+  position: relative;
+  min-height: 150px; // Asegura espacio para la animación
+  
+  .mask-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    
+    &:hover {
+      // Efecto de elevación al hacer hover
+      filter: drop-shadow(0 0 10px rgba($primary, 255));
+    }
+  }
+}
+
+// Contenedor de órbita
+.orbit-container {
+  position: absolute;
+  width: $orbital-size;
+  height: $orbital-size;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(var(--start-angle, 0deg));
+  animation: orbit $orbit-speed linear infinite paused;
+  opacity: 0;
+  transition: opacity 0.1s ease;
+  pointer-events: none;
+  z-index: 1;
+  .mask-container:hover & {
+    opacity: 1;
+    animation-play-state: running;
+  }
+}
+
+// Círculos individuales
+.orbit-circle {
+  width: $circle-size;
+  height: $circle-size;
+  border-radius: 50%;
+  position: absolute;
+  left: 5%;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0;
+  transition: all 0.3s ease;
+  animation: colorChange $color-speed infinite normal;
+  background: $primary;
+  border: 4px solid $secondary;
+}
+
+
+// ======================
+// CONTROL DE HOVER
+// ======================
+.mask-wrapper:hover {
+  .orbit-container {
+    opacity: 1;
+    animation-play-state: running;
+  }
+  
+  .orbit-circle {
+    opacity: 1;
+  }
+}
+
+// ======================
+// ANIMACIONES KEYFRAMES
+// ======================
+@keyframes orbit {
+  from { transform: translate(-50%, -50%) rotate(var(--start-angle, 0deg)); }
+  to { transform: translate(-50%, -50%) rotate(calc(var(--start-angle, 0deg) + 360deg)); }
+}
+
+@keyframes colorChange {
+  0% {
+    background: $primary;
+    border-color: $secondary;
+  }
+  50% {
+    background: $secondary;
+    border-color: $primary;
+  }
+  100% {
+    background: $primary;
+    border-color: $secondary;
+  }
+}
+
+
+// ================================================
+// ANIMACIÓN DE LA TRIFUERZA
+// ================================================
+.trifuerza {
+  cursor: pointer;
+  filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.5));
+}
+
+.triangulo {
+  transition: all 0.3s ease;
+  stroke-width: 3;
+}
+
+.triangulo:hover {
+  filter: brightness(1.2);
+  transform: translateY(-2px);
+}
+
+#poder { fill: #FFD700; stroke: #D4AF37; }
+#sabiduria { fill: #FFD700; stroke: #D4AF37; }
+#valor { fill: #FFD700; stroke: #D4AF37; }
+
+.brillo {
+  animation: resplandor 2s infinite alternate;
+}
+
+@keyframes resplandor {
+  from { opacity: 0.3; }
+  to { opacity: 0.8; }
+}
+
+
+
+// ================================================
+// ANIMACIÓN DE ENTRADA PARA PÁRRAFOS
+// ================================================
+
+// Definimos la animación
+@keyframes entradaDesdeDerecha {
+  0% {
+    opacity: 0;
+    transform: translateX(100%); // Comienza fuera de pantalla a la derecha 
+    filter: blur(5px); // Efecto de desenfoque inicial 
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0); // Posición final original 
+    filter: blur(0);
+  }
+}
+
+// Aplicamos la animación a los títulos
+h1,h2,h3:not(.popover-header),h4,h5,th,td,tr,label {
+  animation: entradaDesdeDerecha 1s ease-out forwards;
+  opacity: 0; // Estado inicial invisible 
+  
+  // Retraso escalonado para efecto cascada
+  @for $i from 1 through 10 {
+    &:nth-child(#{$i}) {
+      animation-delay: $i * 0.2s;
+    }
+  }
+  
+  // Respetar preferencias de movimiento reducido
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+    opacity: 1;
+  }
+}
+
+
+
+
+
+// ================================================
+// TRANSICIONES DE PÁGINA SUAVES
+// ================================================
+
+// 1. Animaciones base
+@keyframes pageTransitionIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px) rotateX(10deg);
+    filter: blur(5px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+    filter: blur(0);
+  }
+}
+
+@keyframes pageTransitionOut {
+  to {
+    opacity: 0;
+    transform: translateY(-20px) rotateX(-10deg);
+    filter: blur(5px);
+  }
+}
+
+// 2. Estructura principal
+html {
+  scroll-behavior: smooth; // Desplazamiento suave nativo
+}
+
+body {
+  opacity: 1;
+  animation: pageTransitionIn 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+  
+  // Efecto de salida al navegar
+  &.page-exit {
+    animation: pageTransitionOut 0.6s cubic-bezier(0.55, 0.06, 0.68, 0.19) forwards;
+  }
+}
+
+// 3. Overlay de carga
+.page-transition-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: $primary;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  
+  &.active {
+    opacity: 1;
+  }
+}
+
+// 4. Efecto de carga progresiva
+img {
+  opacity: 1;
+  transform: scale(0.95);
+  transition: all 0.6s ease;
+  
+  &.loaded {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+
+.navbar-brand {
+  position: relative;
+  z-index: 10001 !important; // Nivel superior
+  
+  img {
+    transition: transform 0.3s ease;
+    
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+}
+
+.page-transition-overlay {
+  z-index: 10000; // Un nivel debajo del logo
+}
+
+
+// Header siempre encima 
+#header {
+  position: relative;
+  z-index: 9999 !important; // Mayor que el overlay
+}
+
+
+
+// Logo específico 
+.navbar-brand {
+  position: relative;
+  z-index: 10000 !important; // Nivel extra de seguridad
+  
+  img {
+    transition: transform 0.3s ease;
+    
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ================================================
+// TRANSICIONES SUAVES
+// ================================================
+
+// Animación de entrada para la página
+@keyframes pageFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+body {
+  animation: pageFadeIn 0.8s ease-out;
+}
+
+// Efecto hover para enlaces
+a:not(.navbar-brand) {
+  transition: all 0.3s ease;
+  
+  &:hover {
+    opacity: 0.8;
+    transform: translateY(-2px);
+  }
+}
+
+// Carga progresiva de imágenes MEJORADA
+img:not(.no-blur) {
+  opacity: 1 !important; // Siempre visible 
+  transform: scale(0.95);
+  filter: blur(5px);
+  transition: all 0.6s ease;
+
+  &.loaded {
+    transform: scale(1);
+    filter: blur(0);
+  }
+}
+
+
+
+
+
+
+
+
+
+// 
+// ================================================
+// CONTENIDO DINÁMICO
+// ================================================
+#info-section {
+  background: linear-gradient(45deg, darken($primary, 20%), $secondary);
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  margin: 3rem 0;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 60%);
+    transform: rotate(45deg);
+    pointer-events: none;
+  }
+
+  h2 {
+    color: $light;
+    font-size: 2.2rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    margin-bottom: 2rem;
+    position: relative;
+    
+    &::after {
+      content: '';
+      display: block;
+      width: 80px;
+      height: 3px;
+      background: $light;
+      margin: 1rem auto;
+      border-radius: 2px;
+    }
+  }
+}
+
+#info-dynamic {
+  display: grid;
+  gap: 1.5rem;
+  counter-reset: step-counter;
+
+  p, img {
+    background: rgba(255,255,255,0.95);
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin: 0;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    position: relative;
+    transition: all 0.3s ease;
+    animation: cardEntrance 0.6s ease-out backwards;
+    
+    &::before {
+      counter-increment: step-counter;
+      content: counter(step-counter);
+      position: absolute;
+      top: -15px;
+      left: -15px;
+      background: $primary;
+      color: $light;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 1.2rem;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+    }
+  }
+
+  p {
+    line-height: 1.6;
+    color: $dark;
+    font-size: 1.1rem;
+    text-align: left;
+    
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+  }
+
+  img {
+    padding: 0;
+    overflow: hidden;
+    width: 100%;
+    max-width: 600px;
+    margin: 1rem auto;
+    filter: grayscale(0.3);
+    transition: all 0.4s ease;
+    
+    &:hover {
+      filter: grayscale(0);
+      transform: scale(1.02);
+    }
+  }
+
+  @keyframes cardEntrance {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  // Animación escalonada
+  p, img {
+    @for $i from 1 through 10 {
+      &:nth-child(#{$i}) {
+        animation-delay: $i * 0.15s;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  #info-section {
+    padding: 1.5rem;
+    
+    h2 {
+      font-size: 1.8rem;
+    }
+  }
+  
+  #info-dynamic {
+    p, img {
+      padding: 1rem;
+      font-size: 1rem;
+      
+      &::before {
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
+      }
+    }
+  }
+}
+
+
+
+
+// 
+// ================================================
+// CONTENEDOR MAIN
+// ================================================
+main.container {
+  position: relative;
+  padding: 3rem 0;
+  margin-top: 2rem !important;
+  
+  // Borde decorativo
+  &::after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 95%;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, $primary, transparent);
+    opacity: 0.3;
+  }
+
+  // Mejoras para la cuadrícula de máscaras
+  .row {
+    position: relative;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 15px;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    
+    // Efecto de profundidad
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+    }
+  }
+
+
+  // Texto descriptivo
+  p.mt-2 {
+    color: rgba($light, 0.9);
+    font-size: 0.95rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    transition: color 0.3s ease;
+    
+    &:hover {
+      color: $light;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  main.container {
+    padding: 1.5rem 0;
+    
+    .row {
+      padding: 1rem;
+    }
+    
+    .btn-outline-primary {
+      margin-bottom: 1.5rem;
+    }
+  }
+}
+
+
+
+// 
+// ================================================
+// FOOTER
+// ================================================
+.footer-container {
+  /*background: linear-gradient(0deg, rgb(161, 169, 71), rgba(255, 255, 255, 0));
+  color: $light;
+  padding: 3rem 1rem;
+  position: relative;
+  overflow: hidden;*/
+  //border-top: 3px solid rgba($primary, 0.3);
+  padding: 3rem 1rem;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 0.25) 0%,     // Dorado oscuro semi-transparente
+    rgba(255, 255, 255, 0.25) 30%,     // Dorado medio
+    rgba(188, 177, 192, 0.15) 70%,     // Dorado claro
+    transparent 100%               // Transparencia completa
+  ), 
+  
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+.moon-phase {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, #4A4A4A, #2B2B2B);
+  box-shadow: 0 0 30px rgba($primary, 0.2);
+  position: relative;
+  animation: moon-glow 4s infinite alternate;
+
+  .moon-face {
+    position: absolute;
+    width: 80%;
+    height: 80%;
+    top: 10%;
+    left: 10%;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #6B6B6B, #3D3D3D);
+    
+    .moon-details {
+      position: absolute;
+      width: 30%;
+      height: 30%;
+      background: rgba($primary, 0.1);
+      border-radius: 50%;
+      top: 20%;
+      left: 30%;
+      box-shadow: 
+        15px 15px 0 -5px rgba($primary, 0.1),
+        -10px -10px 0 -3px rgba($primary, 0.1);
+    }
+  }
+}
+
+.footer-sections {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  padding-left: 2rem;
+  border-left: 2px solid rgba($primary, 0.2);
+}
+
+.footer-section {
+  h4 {
+    color: $primary;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  }
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  
+  li {
+    margin: 0.8rem 0;
+    
+    a {
+      color: rgba($light, 0.9);
+      text-decoration: none;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      
+      &:hover {
+        color: $light;
+        transform: translateX(10px);
+        
+        i {
+          color: $primary;
+        }
+      }
+      
+      i {
+        width: 20px;
+        transition: color 0.3s ease;
+      }
+    }
+  }
+}
+
+.legal-info {
+  opacity: 0.8;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.triforce-icon {
+  position: absolute;
+  bottom: -30px;
+  right: -30px;
+  width: 150px;
+  height: 150px;
+  opacity: 0.1;
+  pointer-events: none;
+  
+  path {
+    fill: none;
+    stroke: rgba($primary, 0.3);
+    stroke-width: 2;
+  }
+}
+
+@keyframes moon-glow {
+  from {
+    box-shadow: 0 0 20px rgba($primary, 0.1);
+  }
+  to {
+    box-shadow: 0 0 40px rgba($primary, 0.3);
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .moon-phase {
+    margin: 0 auto 2rem;
+  }
+
+  .footer-sections {
+    padding-left: 0;
+    border-left: none;
+  }
+
+  .footer-links li a:hover {
+    transform: none;
+  }
+
+  .triforce-icon {
+    display: none;
+  }
+}
+
+
+// ================================================
+// HEADER
+// ================================================
+.header-container {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.3) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  //url('img/textura-piedra.jpg'); // Añade textura de piedra antigua
+  //border-bottom: 3px solid rgba(225, 176, 53, 0.634);
+  //box-shadow: 0 5px 30px rgba(0, 0, 0, 0.4);
+  position: relative;
+  //overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+      radial-gradient(circle at 50% 0%, rgba(255, 215, 0, 0.1) 0%, transparent 30%),
+      linear-gradient(45deg, transparent 90%, rgba(218, 165, 32, 0.1) 100%);
+    pointer-events: none;
+  }
+}
+
+.navbar {
+  padding: 0.5rem 0;
+
+  .navbar-brand {
+    transition: transform 0.3s ease;
+    position: relative;
+    
+    img {
+      height: 60px;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
+      transition: all 0.3s ease;
+    }
+
+    &:hover {
+      transform: scale(1.05);
+      
+      img {
+        filter: drop-shadow(0 0 8px rgba(218, 165, 32, 0.4));
+      }
+    }
+  }
+
+  .navbar-toggler {
+    border-color: rgba(218, 165, 32, 0.5);
+    
+    .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(218, 165, 32, 0.8)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    }
+  }
+
+  .nav-link {
+    color: rgba(255, 255, 255, 0.85) !important;
+    position: relative;
+    margin: 0 1rem;
+    transition: all 0.3s ease;
+    font-weight: 500;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: $primary;
+      transition: width 0.3s ease;
+    }
+
+    &:hover,
+    &.active {
+      color: $primary !important;
+      
+      &::after {
+        width: 100%;
+      }
+    }
+  }
+
+  .dropdown-menu {
+    background: rgba(25, 25, 25, 0.95);
+    border: 1px solid rgba(218, 165, 32, 0.3);
+    
+    .dropdown-item {
+      color: rgba(255, 255, 255, 0.85);
+      transition: all 0.2s ease;
+      
+      &:hover {
+        background: rgba(218, 165, 32, 0.1);
+        color: $primary !important;
+      }
+    }
+  }
+
+  .buscador {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(218, 165, 32, 0.3);
+    color: white !important;
+    transition: all 0.3s ease;
+
+    &:focus {
+      background: rgba(0, 0, 0, 0.3);
+      border-color: $primary;
+      box-shadow: 0 0 10px rgba(218, 165, 32, 0.2);
+    }
+
+    &::placeholder {
+      color: rgba(255, 255, 255, 0.6);
+    }
+  }
+
+  .btn-outline-success {
+    border-color: rgba(218, 165, 32, 0.5);
+    color: rgba(218, 165, 32, 0.8);
+    
+    &:hover {
+      background: rgba(218, 165, 32, 0.1);
+      border-color: $primary;
+      color: $primary;
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .navbar {
+    .navbar-collapse {
+      background: rgba(25, 25, 25, 0.95);
+      padding: 1rem;
+      margin-top: 1rem;
+      border: 1px solid rgba(218, 165, 32, 0.3);
+      border-radius: 5px;
+    }
+    
+    .nav-link {
+      margin: 0.5rem 0;
+      
+      &::after {
+        bottom: -2px;
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+// ================================================
+// CUADERNO BOMBER
+// ================================================
+// Estilo del cuaderno
+.ancient-book {
+  position: relative;
+  background: url('../img/fondoCuaderno.png') repeat;
+  border: 15px solid #5a442e;
+  border-radius: 10px;
+  box-shadow: 
+    0 0 30px rgba(0,0,0,0.1), 
+    inset 0 0 50px rgba(0,0,0,0.1),
+    0 4px 20px rgba(0,0,0,0.2);
+  padding: 2rem;
+  min-height: 80vh;
+  transition: transform 0.3s ease;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    right: -15px;
+    bottom: -15px;
+    border: 2px solid #3a2d20;
+    pointer-events: none;
+  }
+  
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(90, 68, 46, 0.1) 0%,
+      rgba(90, 68, 46, 0) 10%,
+      rgba(90, 68, 46, 0) 90%,
+      rgba(90, 68, 46, 0.1) 100%
+    );
+    pointer-events: none;
+  }
+}
+
+.mission-card {
+  position: relative;
+  background: url('../img/fondoCuaderno.png');
+  border: 2px solid #5a442e;
+  border-radius: 8px;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  overflow: hidden;
+  z-index: 1;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+      45deg,
+      rgba(90, 68, 46, 0.05) 0%,
+      rgba(255, 255, 255, 0.1) 50%,
+      rgba(90, 68, 46, 0.05) 100%
+    );
+    pointer-events: none;
+  }
+  
+  &:hover {
+    transform: rotate(0.5deg) scale(1.02);
+    box-shadow: 
+      2px 2px 8px rgba(0,0,0,0.2),
+      0 4px 15px rgba(90, 68, 46, 0.2);
+    z-index: 2;
+    
+    .mission-header {
+      &::after {
+        opacity: 0.1;
+      }
+    }
+  }
+  
+  .mission-header {
+    position: relative;
+    background: rgba(90, 68, 46, 0.1);
+    border-bottom: 2px dashed #5a442e;
+    padding: 1.5rem 1rem;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: #5a442e;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    
+    .character-portrait {
+      width: 80px;
+      height: 80px;
+      border: 2px solid #5a442e;
+      border-radius: 50%;
+      overflow: hidden;
+      margin: 0 auto 1rem;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+      
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      
+      &:hover {
+        transform: rotate(5deg) scale(1.05);
+      }
+    }
+    
+    .mission-title {
+      font-family: 'Cinzel', bold;
+      font-size: 1.25rem;
+      text-align: center;
+      color: #5a442e;
+      margin: 0;
+      text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
+    }
+  }
+  
+  .mission-meta {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding: 0.5rem 0;
+    
+    .meta-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1rem;
+      background: rgba(90, 68, 46, 0.1);
+      color: #5a442e;
+      border-radius: 20px;
+      cursor: help;
+      transition: background 0.3s ease;
+      
+      &:hover {
+        background: rgba(90, 68, 46, 0.2);
+      }
+      
+      i {
+        font-size: 1.2rem;
+      }
+    }
+  }
+  
+  .mission-details {
+    padding: 1rem;
+    
+    .detail-item {
+      margin: 0.75rem 0;
+      padding: 0.75rem;
+      border-left: 3px solid;
+      background: rgba(255, 255, 255, 0.1);
+      color: #5a442e;
+      position: relative;
+      transition: transform 0.3s ease;
+      
+      &:hover {
+        transform: translateX(5px);
+      }
+      
+      &.condition { 
+        border-color: #2b315d;
+        background: linear-gradient(to right, rgba(73, 58, 147, 0.47), transparent);
+      }
+      &.action { 
+        border-color: #8a5132;
+        background: linear-gradient(to right, rgba(178, 122, 70, 0.508), transparent);
+      }
+      &.reward { 
+        border-color: #97516b;
+        background: linear-gradient(to right, rgba(140, 77, 119, 0.497), transparent);
+      }
+      
+      .detail-label {
+        font-weight: 700;
+        display: block;
+        color: #5a442e;
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        margin-bottom: 0.25rem;
+      }
+    }
+  }
+  
+  .mission-footer {
+    background: rgba(90, 68, 46, 0.1);
+    border-top: 2px dashed #5a442e;
+    padding: 0.75rem;
+    font-size: 0.85rem;
+    text-align: center;
+  }
+}
+
+// Paginación estilo antiguo
+.book-page-link {
+  background: #f0e6d3 !important;
+  border: 1px solid #5a442e !important;
+  color: #5a442e !important;
+  margin: 0 2px;
+  min-width: 40px;
+  text-align: center;
+  position: relative;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    background: #5a442e !important;
+    color: #f0e6d3 !important;
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  }
+  
+  &.active {
+    background: #5a442e !important;
+    color: #f0e6d3 !important;
+    font-weight: bold;
+    transform: scale(1.1);
+    z-index: 1;
+  }
+}
+
+// Efectos de página
+.book-page {
+  display: none;
+  animation: pageTurn 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+  
+  &.active {
+    display: block;
+  }
+}
+
+@keyframes pageTurn {
+  from { 
+    opacity: 0; 
+    transform: perspective(1000px) rotateY(-15deg) translateZ(50px);
+  }
+  to { 
+    opacity: 1; 
+    transform: perspective(1000px) rotateY(0) translateZ(0);
+  }
+}
+
+// Efecto de costura del cuaderno
+.book-stitches {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 4px;
+  background: repeating-linear-gradient(
+    180deg,
+    #3a2d20 0px,
+    #3a2d20 5px,
+    #f0e6d3 5px,
+    #f0e6d3 10px
+  );
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+// Cinta decorativa
+.book-ribbon {
+  position: absolute;
+  top: -10px;
+  right: 20px;
+  width: 40px;
+  height: 60px;
+  background: #c44d58;
+  transform: rotate(45deg);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100%;
+    height: 20px;
+    background: #a83843;
+    clip-path: polygon(0 0, 100% 0, 50% 100%);
+  }
+}
+
+
+
+
+
+/*
+.navbar {
+  position: relative;
+  z-index: 1050; // Asegurar que esté por encima de otros elementos
+}
+.carousel-overlay {
+  z-index: 1; // Reducir para que no cubra el menú
+}*/
+
+
+//INDEX
+
+// Variables temáticas
+$main-purple: #4a2a5d;
+$accent-gold: #d4af37;
+$dark-bg: #1a1a1a;
+
+// Hero Section
+.hero-section {
+  position: relative;
+  height: 100vh;
+  //overflow: hidden;
+
+  .carousel-item {
+    height: 100vh;
+    
+    img {
+      object-fit: cover;
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  .carousel-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba($main-purple, 0.9), rgba($dark-bg, 0.7));
+  }
+
+  .hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+
+    .main-title {
+      font-family: 'Cinzel', serif;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      
+      .title-gradient {
+        background: linear-gradient(to right, $accent-gold, #fff);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-size: 3.5rem;
+        display: block;
+        margin-bottom: 1rem;
+      }
+
+      .subtitle {
+        color: #fff;
+        font-size: 1.5rem;
+        letter-spacing: 2px;
+        text-shadow: 0 0 10px rgba($accent-gold, 0.5);
+      }
+    }
+  }
+}
+
+// Sección de Tarjetas
+.features-section {
+  background: $dark-bg;
+  padding: 4rem 0;
+
+  .feature-card {
+    background: lighten($dark-bg, 5%);
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    height: 100%;
+
+    &:hover {
+      transform: translateY(-10px);
+    }
+
+    .card-image {
+      height: 200px;
+      overflow: hidden;
+      
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+      }
+    }
+
+    .card-content {
+      padding: 2rem;
+      
+      h3 {
+        color: #fff;
+        font-family: 'Cinzel', serif;
+        margin-bottom: 1rem;
+      }
+
+      p {
+        color: rgba(255,255,255,0.8);
+        margin-bottom: 2rem;
+      }
+
+      .cta-button {
+        display: inline-flex;
+        align-items: center;
+        padding: 0.8rem 2rem;
+        background: $accent-gold;
+        color: $dark-bg;
+        border-radius: 30px;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        
+        &:hover {
+          background: lighten($accent-gold, 10%);
+          transform: scale(1.05);
+        }
+
+        i {
+          margin-left: 0.5rem;
+          transition: transform 0.3s ease;
+        }
+
+        &:hover i {
+          transform: translateX(5px);
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+// Botón flotante
+.back-to-top-btn {
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-radius: 50%;
+  background: $accent-gold;
+  color: $dark-bg;
+  font-size: 1.2rem;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+  box-shadow: 
+    0 2px 10px rgba(0,0,0,0.2),
+    0 0 0 2px rgba($accent-gold, 0.2);
+  z-index: 1000;
+
+  &:hover {
+    background: lighten($accent-gold, 10%);
+    transform: translateY(-5px);
+    box-shadow: 
+      0 4px 15px rgba(0,0,0,0.3),
+      0 0 0 4px rgba($accent-gold, 0.3);
+  }
+
+  &.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+}
+
+
+
+
+
+// CONSEJOS// CONSEJOS - SCSS MEJORADO
+$main-purple: #4a2a5d;
+$accent-gold: #d4af37;
+$moon-red: #c44d58;
+$dark-bg: #1a1a1a;
+
+// SCSS para el Hero
+.advice-hero {
+  position: relative;
+  padding: 6rem 0;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: repeat;
+  background: 
+    linear-gradient(45deg, rgba($main-purple, 0.9), rgba($dark-bg, 0.9)),
+    url('../img/moon2.webp') center/cover;
+
+  .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+      45deg,
+      rgba($accent-gold, 0.05) 0px,
+      rgba($accent-gold, 0.05) 10px,
+      transparent 10px,
+      transparent 20px
+    );
+    z-index: 1;
+  }
+// CICLO LUNAR Y MÚSICA
+.sound-btn {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba($accent-gold, 0.8);
+  border: none;
+  color: $dark-bg;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    transform: scale(1.1);
+    background: $accent-gold;
+  }
+}
+
+.moon-phase {
+  &::before {
+    transition: all 0.5s ease;
+  }
+  
+  &.day1::before {
+    background: #94a5b3;
+    box-shadow: 0 0 10px rgba(148, 165, 179, 0.5);
+  }
+  
+  &.day2::before {
+    background: #d4af37;
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+  }
+  
+  &.day3::before {
+    background: #c44d58;
+    box-shadow: 0 0 10px rgba(196, 77, 88, 0.5);
+  }
+}
+
+.time-counter {
+  color: rgba(255,255,255,0.8);
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  
+  .moon-phase {
+    position: relative;
+    padding-left: 25px;
+    
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 15px;
+      height: 15px;
+      //background: $moon-red;
+      border-radius: 50%;
+      //box-shadow: 0 0 10px rgba($moon-red, 0.5);
+    }
+  }
+}
+
+.moon-symbol {
+  color: $accent-gold;
+  margin-bottom: 1.5rem;
+  animation: moonOrbit 15s linear infinite;
+  
+  svg {
+    filter: drop-shadow(0 0 5px rgba($accent-gold, 0.3));
+  }
+}
+//
+  .hero-title {
+    font-family: 'Cinzel', serif;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 1rem;
+    
+    .title-gradient {
+      background: linear-gradient(to right, $accent-gold, lighten($accent-gold, 15%));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: block;
+      font-size: 2.5rem;
+    }
+
+    .subtitle {
+      display: block;
+      font-size: 1.2rem;
+      color: rgba(255,255,255,0.9);
+      margin-top: 0.5rem;
+      font-weight: 300;
+    }
+  }
+
+  @keyframes moonOrbit {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+}
+
+.strategic-card {
+  border: 2px solid rgba($accent-gold, 0.2);
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+  height: 100%;
+  
+  &:hover {
+    transform: translateY(-5px);
+    border-color: $accent-gold;
+    box-shadow: 0 5px 15px rgba($accent-gold, 0.2);
+  }
+
+  .card-header-icon {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 13px 13px 0 0;
+    
+    .card-icon-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      transition: transform 0.3s ease;
+    }
+    
+    .badge {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      font-size: 0.9rem;
+      padding: 0.5rem 1rem;
+    }
+  }
+
+  .card-body {
+    padding: 1.5rem;
+    
+    .card-title {
+      font-family: 'Cinzel', serif;
+      color: $accent-gold;
+      margin-bottom: 1rem;
+      
+      i {
+        color: rgba($accent-gold, 0.7);
+      }
+    }
+    
+    .card-text {
+      color: rgba(255,255,255,0.8);
+      min-height: 80px;
+    }
+  }
+
+  // Para tarjetas de consejos sin imagen
+  .card-icon-wrapper {
+    font-size: 3rem;
+    color: $accent-gold;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+
+  .card-tip-progress {
+    margin-top: 1.5rem;
+    
+    .progress {
+      height: 25px;
+      border-radius: 12px;
+      background: rgba(255,255,255,0.1);
+      
+      &-bar {
+        background: $accent-gold;
+        color: $dark-bg;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  }
+
+  .card-footer-actions {
+    margin-top: 1.5rem;
+    
+    .btn-gold {
+      background: linear-gradient(45deg, $accent-gold, darken($accent-gold, 10%));
+      color: $dark-bg;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 25px;
+      width: 100%;
+      transition: all 0.3s ease;
+      
+      &:hover {
+        transform: scale(1.05);
+        box-shadow: 0 3px 10px rgba($accent-gold, 0.3);
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+// Player de música global
+#music-player {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 10000;
+
+  .music-toggle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: rgba($accent-gold, 0.9);
+    border: 2px solid $dark-bg;
+    color: $dark-bg;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    
+    &:hover {
+      transform: scale(1.1) rotate(15deg);
+      background: $accent-gold;
+    }
+
+    .moon-indicator {
+      position: absolute;
+      top: -5px;
+      right: -5px;
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      background: $moon-red;
+      box-shadow: 0 0 5px rgba($moon-red, 0.5);
+    }
+  }
+}
+
+
+
+#music-player {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 1000;
+
+  .music-toggle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: rgba(212, 175, 55, 0.9);
+    border: none;
+    color: #1a1a1a;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+      transform: scale(1.1) rotate(15deg);
+      background: lighten($accent-gold, 10%);
+    }
+
+    .moon-indicator {
+      position: absolute;
+      top: -5px;
+      right: -5px;
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      background: #c44d58;
+      box-shadow: 0 0 5px rgba(196, 77, 88, 0.5);
+    }
+  }
+}
+
+#music-player {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 1000;
+}
+
+.music-toggle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #d4af37;
+  border: none;
+  color: #1a1a1a;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.moon-indicator {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  transition: all 0.5s ease;
+}

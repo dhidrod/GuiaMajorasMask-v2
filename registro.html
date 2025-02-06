@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Galería de fotos</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <!-- Estilo Personalizado -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body class="d-flex flex-column">
+    <!-- Header -->
+    <div id="header"></div>
+
+    <!-- Separador -->
+    <div class="container">
+      <hr class="my-4" />
+    </div>
+
+    <main class="container my-5 flex-grow-1">
+      <h1 class="text-center">Regístrate</h1>
+
+      <div class="d-flex justify-content-center">
+        <svg
+          class="trifuerza"
+          width="300"
+          height="260"
+          viewBox="0 0 300 260"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <!-- Triángulo superior (Sabiduría) -->
+          <polygon
+            id="sabiduria"
+            class="triangulo"
+            points="150,30 220,130 80,130"
+          />
+
+          <!-- Triángulo izquierdo (Valor) -->
+          <polygon
+            id="valor"
+            class="triangulo"
+            points="80,130 150,230 15,230"
+          />
+
+          <!-- Triángulo derecho (Poder) -->
+          <polygon
+            id="poder"
+            class="triangulo"
+            points="220,130 290,230 150,230"
+          />
+        </svg>
+      </div>
+
+      <!-- Formulario de registro -->
+      <form class="row g-3 needs-validation" novalidate>
+        <div class="col-md-6">
+          <label for="nombre" class="form-label">Nombre</label>
+          <input
+            type="text"
+            class="form-control"
+            id="nombre"
+            placeholder="Nombre completo"
+            required
+          />
+          <div class="invalid-feedback">Debe ingresar su nombre</div>
+        </div>
+        <div class="col-md-6">
+          <label for="correo" class="form-label">Correo Electrónico</label>
+          <input
+            type="email"
+            class="form-control"
+            id="correo"
+            placeholder="correo@ejemplo.com"
+            required
+          />
+          <div class="invalid-feedback">
+            Debe ingresar un correo electrónico válido
+          </div>
+        </div>
+        <div class="col-md-6">
+          <label for="clave" class="form-label">Contraseña</label>
+          <input
+            type="password"
+            class="form-control"
+            id="clave"
+            placeholder="Contraseña"
+            required
+          />
+          <div class="invalid-feedback">Debe ingresar una contraseña</div>
+        </div>
+        <div class="col-md-6">
+          <label for="clave2" class="form-label">Repite la contraseña</label>
+          <input
+            type="password"
+            class="form-control"
+            id="clave2"
+            placeholder="Repite la contraseña"
+            required
+          />
+          <div class="invalid-feedback">Las contraseñas deben coincidir</div>
+        </div>
+        <div class="col-md-6">
+          <label for="fechaNacimiento" class="form-label"
+            >Fecha de nacimiento</label
+          >
+          <input
+            type="date"
+            class="form-control"
+            id="fechaNacimiento"
+            required
+          />
+          <div class="invalid-feedback">
+            Debe ingresar su fecha de nacimiento
+          </div>
+        </div>
+        <div class="col-md-6">
+          <label for="genero" class="form-label">Género</label>
+          <select class="form-select" id="genero" required>
+            <option value="">Seleccione una opción</option>
+            <option value="masculino">Masculino</option>
+            <option value="femenino">Femenino</option>
+            <option value="otro">Otro</option>
+          </select>
+          <div class="invalid-feedback">Debe seleccionar un género</div>
+        </div>
+        <div class="col-md-6">
+          <label for="perfil" class="form-label">Subir imagen de perfil</label>
+          <input
+            type="file"
+            class="form-control"
+            id="perfil"
+            accept="image/*"
+          />
+        </div>
+        <div class="col-12">
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              id="terminos"
+              required
+            />
+            <label class="form-check-label" for="terminos">
+              Acepto los términos y condiciones
+            </label>
+            <div class="invalid-feedback">
+              Debe aceptar los términos y condiciones
+            </div>
+          </div>
+        </div>
+        <div class="col-12">
+          <button
+            type="submit"
+            class="btn btn-primary w-30"
+            id="boton-registro"
+          >
+            Registrarse
+          </button>
+        </div>
+      </form>
+    </main>
+
+    <!-- Footer -->
+    <div id="footer"></div>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/cargarEncPie.js"></script>
+    <script src="js/iniToolTips.js"></script>
+    <script>
+      (function () {
+        "use strict";
+        var forms = document.querySelectorAll(".needs-validation");
+        Array.prototype.slice.call(forms).forEach(function (form) {
+          form.addEventListener(
+            "submit",
+            function (event) {
+              if (!form.checkValidity()) {
+                event.preventDefault();
+                event.stopPropagation();
+              }
+              form.classList.add("was-validated");
+            },
+            false
+          );
+        });
+      })();
+    </script>
+    <script>
+      // Animación interactiva
+      document.querySelectorAll(".triangulo").forEach((tri) => {
+        tri.addEventListener("mousemove", (e) => {
+          const rect = tri.getBoundingClientRect();
+          tri.style.transform = `translate(
+                      ${(e.clientX - rect.left - rect.width / 2) * 0.1}px, 
+                      ${(e.clientY - rect.top - rect.height / 2) * 0.1}px
+                  )`;
+        });
+
+        tri.addEventListener("mouseleave", () => {
+          tri.style.transform = "none";
+        });
+      });
+    </script>
+
+    <script src="js/backtotop.js"></script>
+    <!-- Botón flotante -->
+    <button id="backToTop" class="back-to-top-btn" aria-label="Volver arriba">
+      <i class="fas fa-chevron-up"></i>
+    </button>
+  </body>
+</html>

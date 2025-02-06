@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guía de Majora's Mask - Principal</title>
+    <!-- Fuente -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- FontAwesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <!-- Estilo Personalizado -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <script src="js/cargarEncPie.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/iniToolTips.js"></script>
+
+    <!-- Añadir animate.css -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+  </head>
+  <body class="d-flex flex-column">
+    <!-- Header -->
+    <div id="header"></div>
+
+    <!-- Reproductor de música global -->
+    <div id="music-player" aria-live="polite">
+      <button
+        id="globalMusicToggle"
+        class="music-toggle"
+        aria-label="Control de música"
+        data-playing="false"
+      >
+        <i class="fas fa-volume-mute"></i>
+        <span class="moon-indicator" aria-hidden="true"></span>
+      </button>
+      <audio id="globalAudio" loop aria-hidden="true">
+        <source src="" type="audio/mpeg" />
+      </audio>
+    </div>
+
+    <!-- Añade este script -->
+    <script src="js/global-audio.js"></script>
+
+    <!-- Hero Section con Carrusel Mejorado -->
+    <section class="hero-section">
+      <div
+        id="carouselMajorasMask"
+        class="carousel slide carousel-fade"
+        data-bs-ride="carousel"
+      >
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <video autoplay loop muted class="d-block w-100">
+              <source src="video/deku.webm" type="video/webm" alt="Video 1" />
+            </video>
+            <div class="carousel-overlay"></div>
+          </div>
+          <div class="carousel-item">
+            <img src="img/img4.png" class="d-block w-100" alt="Imagen 2" />
+            <div class="carousel-overlay"></div>
+          </div>
+          <div class="carousel-item">
+            <img src="img/img3.png" class="d-block w-100" alt="Imagen 3" />
+            <div class="carousel-overlay"></div>
+          </div>
+        </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselMajorasMask"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Anterior</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselMajorasMask"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Siguiente</span>
+        </button>
+      </div>
+      <div class="hero-content text-center">
+        <h1 class="main-title animate__animated animate__fadeInDown">
+          <span class="title-gradient">Guía Definitiva</span>
+          <small class="subtitle">Majora's Mask</small>
+        </h1>
+      </div>
+    </section>
+
+    <!-- Sección de Tarjetas Mejorada -->
+    <section class="features-section py-5">
+      <div class="container">
+        <div class="row g-4">
+          <!-- Tarjeta 1 -->
+          <div class="col-lg-4">
+            <div class="feature-card">
+              <div class="card-image">
+                <img src="img/c1.jpg" alt="Máscaras del juego" />
+              </div>
+              <div class="card-content">
+                <h3>Descubre las Máscaras</h3>
+                <p>
+                  Explora las misteriosas máscaras y aprende cómo obtenerlas.
+                </p>
+                <a href="mascaras.html" class="cta-button">
+                  Ver Máscaras
+                  <i class="fas fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- Tarjeta 2 -->
+          <div class="col-lg-4">
+            <div class="feature-card">
+              <div class="card-image">
+                <img src="img/c2.jpg" alt="Objetos del juego" />
+              </div>
+              <div class="card-content">
+                <h3>Armas y Objetos</h3>
+                <p>Consigue herramientas esenciales para tu aventura.</p>
+                <a href="objetos1.html" class="cta-button">
+                  Ver Objetos
+                  <i class="fas fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- Tarjeta 3 -->
+          <div class="col-lg-4">
+            <div class="feature-card">
+              <div class="card-image">
+                <img src="img/c3.jpg" alt="Trucos y consejos" />
+              </div>
+              <div class="card-content">
+                <h3>Trucos y Consejos</h3>
+                <p>
+                  Domina el tiempo y salva Termina con nuestras guías
+                  detalladas.
+                </p>
+                <a href="consejos.html" class="cta-button">
+                  Ver Consejos
+                  <i class="fas fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <div id="footer"></div>
+
+    <!-- Scripts -->
+    <script>
+      // Inicializar carrusel
+      const myCarousel = new bootstrap.Carousel("#carouselMajorasMask", {
+        interval: 5000,
+        wrap: true,
+      });
+    </script>
+    <script src="js/backtotop.js"></script>
+    <!-- Botón flotante -->
+    <button id="backToTop" class="back-to-top-btn" aria-label="Volver arriba">
+      <i class="fas fa-chevron-up"></i>
+    </button>
+  </body>
+</html>

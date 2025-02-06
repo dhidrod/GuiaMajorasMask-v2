@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cuaderno de los Bombers</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <!-- Estilo Personalizado -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body class="d-flex flex-column">
+    <!-- Header -->
+    <div id="header"></div>
+
+    <!-- Separador -->
+    <div class="container">
+      <hr class="my-4" />
+    </div>
+    
+    <!-- Contenido principal -->
+    <div class="container my-5 p-10 flex-grow-1">
+      <!-- Fondo del cuaderno -->
+      <div class="cuaderno bg-white p-4 rounded shadow">
+        <div id="tabla" class="table-responsive">
+          <table class="thead-dark table table-bordered table-hover">
+            <thead>
+              <tr>
+                <th
+                  scope="col"
+                  class="col-azul"
+                  data-bs-toggle="popover"
+                  data-bs-placement="top"
+                  data-bs-title="Persona"
+                  data-bs-content="El personaje al que debes ayudar."
+                >
+                  Persona
+                </th>
+                <th
+                  scope="col"
+                  class="col-azul"
+                  data-bs-toggle="popover"
+                  data-bs-placement="top"
+                  data-bs-title="Hora"
+                  data-bs-content="El momento o la hora del día."
+                >
+                  Hora
+                </th>
+                <th
+                  scope="col"
+                  class="col-naranja"
+                  data-bs-toggle="popover"
+                  data-bs-placement="top"
+                  data-bs-title="Lugar"
+                  data-bs-content="El lugar donde se encuentra."
+                >
+                  Lugar
+                </th>
+                <th
+                  scope="col"
+                  class="col-naranja"
+                  data-bs-toggle="popover"
+                  data-bs-placement="top"
+                  data-bs-title="Condición"
+                  data-bs-content="La condición que debes cumplir."
+                >
+                  Condición
+                </th>
+                <th
+                  scope="col"
+                  class="col-rosa"
+                  data-bs-toggle="popover"
+                  data-bs-placement="top"
+                  data-bs-title="Acción"
+                  data-bs-content="Lo que debes hacer."
+                >
+                  Acción
+                </th>
+                <th
+                  scope="col"
+                  class="col-rosa"
+                  data-bs-toggle="popover"
+                  data-bs-placement="top"
+                  data-bs-title="Recompensa"
+                  data-bs-content="La recompensa que obtendrás."
+                >
+                  Recompensa
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="col-azul2">Señora Mayor de la Tienda de Bombas</td>
+                <td class="col-azul3">Noche del Primer Día (12:00 AM)</td>
+                <td class="col-naranja2">Ciudad Reloj (Calle Norte)</td>
+                <td class="col-naranja3">Estar en la calle a medianoche.</td>
+                <td class="col-rosa2">
+                  Detener al ladrón que intenta robar su bolsa.
+                </td>
+                <td class="col-rosa3">Gran Bolsa de Bombas (o 100 Rupias).</td>
+              </tr>
+              <tr>
+                <td class="col-azul2">Persona en el WC</td>
+                <td class="col-azul3">12:00 AM - 6:00 AM (Cualquier día)</td>
+                <td class="col-naranja2">
+                  Posada del Puchero (Baño, planta baja)
+                </td>
+                <td class="col-naranja3">Tener un objeto de papel.</td>
+                <td class="col-rosa2">Entregar papel al personaje.</td>
+                <td class="col-rosa3">Pieza de Corazón</td>
+              </tr>
+              <tr>
+                <td class="col-azul2">Abuela de Anju</td>
+                <td class="col-azul3">Día (Cualquier día)</td>
+                <td class="col-naranja2">Posada del Puchero (Planta baja)</td>
+                <td class="col-naranja3">Usar la Máscara para trasnochar.</td>
+                <td class="col-rosa2">
+                  Hablar con ella y escuchar sus historias.
+                </td>
+                <td class="col-rosa3">2 Cuartos de corazón.</td>
+              </tr>
+              <tr>
+                <td class="col-azul2">Señora Mayor de la Tienda de Bombas</td>
+                <td class="col-azul3">Noche del Primer Día (12:00 AM)</td>
+                <td class="col-naranja2">Ciudad Reloj (Calle Norte)</td>
+                <td class="col-naranja3">Estar en la calle a medianoche.</td>
+                <td class="col-rosa2">
+                  Detener al ladrón que intenta robar su bolsa.
+                </td>
+                <td class="col-rosa3">Gran Bolsa de Bombas (o 100 Rupias).</td>
+              </tr>
+              <tr>
+                <td class="col-azul2">Persona en el WC</td>
+                <td class="col-azul3">12:00 AM - 6:00 AM (Cualquier día)</td>
+                <td class="col-naranja2">
+                  Posada del Puchero (Baño, planta baja)
+                </td>
+                <td class="col-naranja3">Tener un objeto de papel.</td>
+                <td class="col-rosa2">Entregar papel al personaje.</td>
+                <td class="col-rosa3">Pieza de Corazón</td>
+              </tr>
+              <tr>
+                <td class="col-azul2">Abuela de Anju</td>
+                <td class="col-azul3">Día (Cualquier día)</td>
+                <td class="col-naranja2">Posada del Puchero (Planta baja)</td>
+                <td class="col-naranja3">Usar la Máscara para trasnochar.</td>
+                <td class="col-rosa2">
+                  Hablar con ella y escuchar sus historias.
+                </td>
+                <td class="col-rosa3">2 Cuartos de corazón.</td>
+              </tr>
+              <tr>
+                <td class="col-azul2">Señora Mayor de la Tienda de Bombas</td>
+                <td class="col-azul3">Noche del Primer Día (12:00 AM)</td>
+                <td class="col-naranja2">Ciudad Reloj (Calle Norte)</td>
+                <td class="col-naranja3">Estar en la calle a medianoche.</td>
+                <td class="col-rosa2">
+                  Detener al ladrón que intenta robar su bolsa.
+                </td>
+                <td class="col-rosa3">Gran Bolsa de Bombas (o 100 Rupias).</td>
+              </tr>
+              <tr>
+                <td class="col-azul2">Persona en el WC</td>
+                <td class="col-azul3">12:00 AM - 6:00 AM (Cualquier día)</td>
+                <td class="col-naranja2">
+                  Posada del Puchero (Baño, planta baja)
+                </td>
+                <td class="col-naranja3">Tener un objeto de papel.</td>
+                <td class="col-rosa2">Entregar papel al personaje.</td>
+                <td class="col-rosa3">Pieza de Corazón</td>
+              </tr>
+              <tr>
+                <td class="col-azul2">Abuela de Anju</td>
+                <td class="col-azul3">Día (Cualquier día)</td>
+                <td class="col-naranja2">Posada del Puchero (Planta baja)</td>
+                <td class="col-naranja3">Usar la Máscara para trasnochar.</td>
+                <td class="col-rosa2">
+                  Hablar con ella y escuchar sus historias.
+                </td>
+                <td class="col-rosa3">2 Cuartos de corazón.</td>
+              </tr>
+              <tr>
+                <td class="col-azul2">Señora Mayor de la Tienda de Bombas</td>
+                <td class="col-azul3">Noche del Primer Día (12:00 AM)</td>
+                <td class="col-naranja2">Ciudad Reloj (Calle Norte)</td>
+                <td class="col-naranja3">Estar en la calle a medianoche.</td>
+                <td class="col-rosa2">
+                  Detener al ladrón que intenta robar su bolsa.
+                </td>
+                <td class="col-rosa3">Gran Bolsa de Bombas (o 100 Rupias).</td>
+              </tr>
+              <tr>
+                <td class="col-azul2">Persona en el WC</td>
+                <td class="col-azul3">12:00 AM - 6:00 AM (Cualquier día)</td>
+                <td class="col-naranja2">
+                  Posada del Puchero (Baño, planta baja)
+                </td>
+                <td class="col-naranja3">Tener un objeto de papel.</td>
+                <td class="col-rosa2">Entregar papel al personaje.</td>
+                <td class="col-rosa3">Pieza de Corazón</td>
+              </tr>
+              <tr>
+                <td class="col-azul2">Abuela de Anju</td>
+                <td class="col-azul3">Día (Cualquier día)</td>
+                <td class="col-naranja2">Posada del Puchero (Planta baja)</td>
+                <td class="col-naranja3">Usar la Máscara para trasnochar.</td>
+                <td class="col-rosa2">
+                  Hablar con ella y escuchar sus historias.
+                </td>
+                <td class="col-rosa3">2 Cuartos de corazón.</td>
+              </tr>
+              <tr>
+                <td class="col-azul2">Señora Mayor de la Tienda de Bombas</td>
+                <td class="col-azul3">Noche del Primer Día (12:00 AM)</td>
+                <td class="col-naranja2">Ciudad Reloj (Calle Norte)</td>
+                <td class="col-naranja3">Estar en la calle a medianoche.</td>
+                <td class="col-rosa2">
+                  Detener al ladrón que intenta robar su bolsa.
+                </td>
+                <td class="col-rosa3">Gran Bolsa de Bombas (o 100 Rupias).</td>
+              </tr>
+              <tr>
+                <td class="col-azul2">Persona en el WC</td>
+                <td class="col-azul3">12:00 AM - 6:00 AM (Cualquier día)</td>
+                <td class="col-naranja2">
+                  Posada del Puchero (Baño, planta baja)
+                </td>
+                <td class="col-naranja3">Tener un objeto de papel.</td>
+                <td class="col-rosa2">Entregar papel al personaje.</td>
+                <td class="col-rosa3">Pieza de Corazón</td>
+              </tr>
+              <tr>
+                <td class="col-azul2">Abuela de Anju</td>
+                <td class="col-azul3">Día (Cualquier día)</td>
+                <td class="col-naranja2">Posada del Puchero (Planta baja)</td>
+                <td class="col-naranja3">Usar la Máscara para trasnochar.</td>
+                <td class="col-rosa2">
+                  Hablar con ella y escuchar sus historias.
+                </td>
+                <td class="col-rosa3">2 Cuartos de corazón.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div id="footer"></div>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/cargarEncPie.js"></script>
+    <script>
+      const popoverTriggerList = document.querySelectorAll(
+        '[data-bs-toggle="popover"]'
+      );
+      const popoverList = [...popoverTriggerList].map(
+        (popoverTriggerEl) => new bootstrap.Popover(popoverTriggerEl)
+      );
+    </script>
+    <script src="js/iniToolTips.js"></script>
+  </body>
+</html>
