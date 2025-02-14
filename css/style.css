@@ -12077,6 +12077,9 @@ body {
   #carouselMajorasMask {
     display: none !important;
   }
+  .hero-section {
+    display: none !important;
+  }
   .my-4 {
     display: block !important;
   }
@@ -13544,6 +13547,65 @@ main.container p.mt-2:hover {
   height: 15px;
   border-radius: 50%;
   transition: all 0.5s ease;
+}
+
+/* Estilos para la sección de video */
+.bg-mask-overlay {
+  background: linear-gradient(45deg, rgba(40, 35, 45, 0.95) 0%, rgba(70, 60, 80, 0.9) 100%), url("../img/img3.png") center/cover no-repeat;
+  position: relative;
+}
+
+.video-container {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 2px solid rgba(255, 215, 0, 0.3);
+}
+
+.video-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, transparent 50%, rgba(0, 0, 0, 0.1) 100%);
+  pointer-events: none;
+}
+
+/*.btn-play-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 4rem;
+  color: rgba(255,255,255,0.8);
+  background: none;
+  border: none;
+  transition: all 0.3s ease;
+  opacity: 0.8;
+}
+
+.video-container.playing .btn-play-overlay {
+  opacity: 0;
+}
+
+.btn-play-overlay:hover {
+  color: #ffd700;
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1.1);
+}*/
+.section-title {
+  color: #ffd700;
+  font-family: "Cinzel", serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.text-shadow {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 /*# sourceMappingURL=style.css.map */
