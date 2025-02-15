@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tabla de Colores - Análisis SCSS</title>
+    <style>
+      :root {
+        font-family: "Segoe UI", system-ui, sans-serif;
+        line-height: 1.6;
+        color: #333;
+        background-color: #f8f9fa;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 2rem auto;
+        padding: 0 1rem;
+      }
+
+      .color-table {
+        width: 100%;
+        border-collapse: collapse;
+        background: white;
+        box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1);
+        border-radius: 12px;
+        overflow: hidden;
+      }
+
+      .color-table thead {
+        background: #2b3129;
+        color: #b69c56;
+      }
+
+      .color-table th {
+        padding: 1.2rem;
+        text-align: left;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+
+      .color-table td {
+        padding: 1rem;
+        border-bottom: 1px solid #eee;
+      }
+
+      .color-table tr:nth-child(even) {
+        background-color: #f8f8f8;
+      }
+
+      .color-table tr:hover {
+        background-color: #f0f0f0;
+        transform: translateY(-2px);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        transition: all 0.2s ease;
+      }
+
+      .color-swatch {
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        border: 2px solid #fff;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        vertical-align: middle;
+        margin-right: 0.8rem;
+      }
+
+      .variable-name {
+        font-family: "Courier New", monospace;
+        font-size: 0.9em;
+        color: #446a39;
+      }
+
+      .importance-badge {
+        display: inline-block;
+        padding: 0.3rem 0.8rem;
+        border-radius: 20px;
+        font-size: 0.8em;
+        font-weight: 500;
+      }
+
+      .sortable-header {
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      .sortable-header:hover {
+        background-color: #3a4637 !important;
+      }
+
+      .sort-arrow {
+        display: inline-block;
+        margin-left: 8px;
+        width: 0;
+        height: 0;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+      }
+
+      .asc .sort-arrow {
+        border-bottom: 5px solid #b69c56;
+      }
+
+      .desc .sort-arrow {
+        border-top: 5px solid #b69c56;
+      }
+
+      .style-guide-header {
+        background: linear-gradient(
+            45deg,
+            rgba(170, 182, 86, 0.95) 0%,
+            rgba(68, 106, 57, 0.95) 100%
+          ),
+          url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAIklEQVQIW2NkQAKrVq36zwjjgzhhYWGMYAEYB8RmROaABADeOQ8CXl/xfgAAAABJRU5ErkJggg==");
+        padding: 2rem 0;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        position: relative;
+        border-bottom: 3px solid #b69c56;
+      }
+
+      .header-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1rem;
+      }
+
+      .logo-container {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+        animation: float 6s ease-in-out infinite;
+      }
+
+      .guide-title {
+        font-family: "Cinzel", serif;
+        color: #fff;
+        margin: 0;
+        line-height: 1.2;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      }
+
+      .gradient-text {
+        background: linear-gradient(to right, #ffd700, #b69c56);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-size: 2.5rem;
+        letter-spacing: 2px;
+      }
+
+      .subtitle {
+        display: block;
+        font-size: 1.8rem;
+        color: #fff;
+        opacity: 0.9;
+        margin-top: 0.5rem;
+        position: relative;
+      }
+
+      .subtitle::after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: linear-gradient(to right, transparent, #fff, transparent);
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+      }
+
+      // ================================================
+      // ANIMACIÓN DE LA TRIFUERZA
+      // ================================================
+      .trifuerza {
+        cursor: pointer;
+        filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.5));
+      }
+
+      .triangulo {
+        transition: all 0.3s ease;
+        stroke-width: 3;
+      }
+
+      .triangulo:hover {
+        filter: brightness(1.2);
+        transform: translateY(-2px);
+      }
+
+      #poder {
+        fill: #ffd700;
+        stroke: #d4af37;
+      }
+      #sabiduria {
+        fill: #ffd700;
+        stroke: #d4af37;
+      }
+      #valor {
+        fill: #ffd700;
+        stroke: #d4af37;
+      }
+
+      .brillo {
+        animation: resplandor 2s infinite alternate;
+      }
+
+      @keyframes resplandor {
+        from {
+          opacity: 0.3;
+        }
+        to {
+          opacity: 0.8;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .logo-container {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .gradient-text {
+          font-size: 2rem;
+        }
+
+        .subtitle {
+          font-size: 1.4rem;
+        }
+
+        .mask-icon {
+          width: 60px;
+          height: 60px;
+        }
+      }
+
+      .alta {
+        background: #66b65633;
+        color: #446a39;
+      }
+      .media {
+        background: #b69c5633;
+        color: #8a5132;
+      }
+      .baja {
+        background: #b11c7f33;
+        color: #b11c7f;
+      }
+
+      @media (max-width: 768px) {
+        .container {
+          padding: 0 0.5rem;
+        }
+
+        .color-table {
+          display: block;
+          overflow-x: auto;
+          white-space: nowrap;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="style-guide-header">
+      <div class="header-content">
+        <div class="logo-container">
+          <div class="d-flex justify-content-center">
+            <svg
+              class="trifuerza"
+              width="300"
+              height="260"
+              viewBox="0 0 300 260"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <!-- Triángulo superior (Sabiduría) -->
+              <polygon
+                id="sabiduria"
+                class="triangulo"
+                points="150,30 220,130 80,130"
+              />
+
+              <!-- Triángulo izquierdo (Valor) -->
+              <polygon
+                id="valor"
+                class="triangulo"
+                points="80,130 150,230 15,230"
+              />
+
+              <!-- Triángulo derecho (Poder) -->
+              <polygon
+                id="poder"
+                class="triangulo"
+                points="220,130 290,230 150,230"
+              />
+            </svg>
+          </div>
+          <h1 class="guide-title">
+            <span class="gradient-text">Guía de Estilo</span><br />
+            <span class="subtitle">Zelda: Majora's Mask</span>
+          </h1>
+        </div>
+      </div>
+    </header>
+    <div class="container">
+      <table class="color-table" id="sortableTable">
+        <thead>
+          <tr>
+            <th>Variable/Color</th>
+            <th>Hex</th>
+            <th>Uso Principal</th>
+            <th>Tipo</th>
+            <th>Importancia</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Colores Principales -->
+          <tr>
+            <td>
+              <div class="color-swatch" style="background-color: #aab656"></div>
+              <span class="variable-name">$primary</span>
+            </td>
+            <td>#aab656</td>
+            <td>Botones, Tooltips, Navbar</td>
+            <td>Primario</td>
+            <td><span class="importance-badge alta">Alta</span></td>
+          </tr>
+          <tr>
+            <td>
+              <div class="color-swatch" style="background-color: #446a39"></div>
+              <span class="variable-name">$secondary</span>
+            </td>
+            <td>#446a39</td>
+            <td>Popovers, Inputs</td>
+            <td>Secundario</td>
+            <td><span class="importance-badge alta">Alta</span></td>
+          </tr>
+          <tr>
+            <td>
+              <div class="color-swatch" style="background-color: #66b656"></div>
+              <span class="variable-name">$success</span>
+            </td>
+            <td>#66b656</td>
+            <td>Estado (éxito)</td>
+            <td>Estado</td>
+            <td><span class="importance-badge media">Media</span></td>
+          </tr>
+          <tr>
+            <td>
+              <div class="color-swatch" style="background-color: #b69c56"></div>
+              <span class="variable-name">$info</span>
+            </td>
+            <td>#b69c56</td>
+            <td>Navbar, Dropdowns</td>
+            <td>Estado</td>
+            <td><span class="importance-badge media">Media</span></td>
+          </tr>
+          <tr>
+            <td>
+              <div class="color-swatch" style="background-color: #b11c7f"></div>
+              <span class="variable-name">$warning</span>
+            </td>
+            <td>#b11c7f</td>
+            <td>Estado (alerta)</td>
+            <td>Estado</td>
+            <td><span class="importance-badge media">Media</span></td>
+          </tr>
+          <tr>
+            <td>
+              <div class="color-swatch" style="background-color: #e66007"></div>
+              <span class="variable-name">$danger</span>
+            </td>
+            <td>#e66007</td>
+            <td>Estado (error)</td>
+            <td>Estado</td>
+            <td><span class="importance-badge media">Media</span></td>
+          </tr>
+          <tr>
+            <td>
+              <div class="color-swatch" style="background-color: #f8f9fa"></div>
+              <span class="variable-name">$light</span>
+            </td>
+            <td>#f8f9fa</td>
+            <td>Texto claro, fondos</td>
+            <td>Neutral</td>
+            <td><span class="importance-badge alta">Alta</span></td>
+          </tr>
+          <tr>
+            <td>
+              <div class="color-swatch" style="background-color: #343a40"></div>
+              <span class="variable-name">$dark</span>
+            </td>
+            <td>#343a40</td>
+            <td>Fondos oscuros</td>
+            <td>Neutral</td>
+            <td><span class="importance-badge baja">Baja</span></td>
+          </tr>
+
+          <!-- Colores de Componentes -->
+          <tr>
+            <td>
+              <div class="color-swatch" style="background-color: #242424"></div>
+              <span class="variable-name">$tooltip-color</span>
+            </td>
+            <td>#242424</td>
+            <td>Texto en tooltips</td>
+            <td>Texto</td>
+            <td><span class="importance-badge media">Media</span></td>
+          </tr>
+          <tr>
+            <td>
+              <div class="color-swatch" style="background-color: #333331"></div>
+              <span class="variable-name">$input-bg</span>
+            </td>
+            <td>#333331</td>
+            <td>Fondo de inputs</td>
+            <td>Fondo</td>
+            <td><span class="importance-badge media">Media</span></td>
+          </tr>
+          <tr>
+            <td>
+              <div class="color-swatch" style="background-color: #868d56"></div>
+              <span class="variable-name">$input-placeholder-color</span>
+            </td>
+            <td>#868d56</td>
+            <td>Placeholders</td>
+            <td>Texto</td>
+            <td><span class="importance-badge media">Media</span></td>
+          </tr>
+          <!-- Colores Específicos -->
+          <tr>
+            <td>
+              <div class="color-swatch" style="background-color: #d4af37"></div>
+              <span>Bordes Trifuerza</span>
+            </td>
+            <td>#d4af37</td>
+            <td>Elementos gráficos</td>
+            <td>Decorativo</td>
+            <td><span class="importance-badge media">Media</span></td>
+          </tr>
+          <tr>
+            <td>
+              <div class="color-swatch" style="background-color: #c44d58"></div>
+              <span>Indicador de luna</span>
+            </td>
+            <td>#c44d58</td>
+            <td>Elementos dinámicos</td>
+            <td>Decorativo</td>
+            <td><span class="importance-badge baja">Baja</span></td>
+          </tr>
+          <!-- Colores Específicos SIN VARIABLE -->
+          <tr>
+            <td>
+              <div class="color-swatch" style="background-color: #5a442e"></div>
+              <span>Estilo antiguo</span>
+            </td>
+            <td>#5a442e</td>
+            <td>Bordes libro, texto misiones</td>
+            <td>Decorativo</td>
+            <td><span class="importance-badge alta">Alta</span></td>
+          </tr>
+          <tr>
+            <td>
+              <div class="color-swatch" style="background-color: #2b3129"></div>
+              <span>Estados activos</span>
+            </td>
+            <td>#2b3129</td>
+            <td>Texto nav-pills, hover botones</td>
+            <td>Interacción</td>
+            <td><span class="importance-badge media">Media</span></td>
+          </tr>
+          <tr>
+            <td>
+              <div class="color-swatch" style="background-color: #242424"></div>
+              <span>Texto componentes</span>
+            </td>
+            <td>#242424</td>
+            <td>Tooltips, popovers</td>
+            <td>Texto</td>
+            <td><span class="importance-badge media">Media</span></td>
+          </tr>
+          <tr>
+            <td>
+              <div class="color-swatch" style="background-color: #ffd700"></div>
+              <span>Trifuerza</span>
+            </td>
+            <td>#FFD700</td>
+            <td>Fill de iconos</td>
+            <td>Iconografía</td>
+            <td><span class="importance-badge media">Media</span></td>
+          </tr>
+          <tr>
+            <td>
+              <div class="color-swatch" style="background-color: #c44d58"></div>
+              <span>Elementos dinámicos</span>
+            </td>
+            <td>#c44d58</td>
+            <td>Cinta decorativa, fase lunar</td>
+            <td>Decorativo</td>
+            <td><span class="importance-badge media">Media</span></td>
+          </tr>
+          <tr>
+            <td>
+              <div class="color-swatch" style="background-color: #d4af37"></div>
+              <span>Bordes dorados</span>
+            </td>
+            <td>#D4AF37</td>
+            <td>Trifuerza, fase lunar</td>
+            <td>Decorativo</td>
+            <td><span class="importance-badge media">Media</span></td>
+          </tr>
+          <tr>
+            <td>
+              <div class="color-swatch" style="background-color: #6c7a3a"></div>
+              <span>Bordes inputs</span>
+            </td>
+            <td>#6c7a3a</td>
+            <td>Borde de campos de formulario</td>
+            <td>Borde</td>
+            <td><span class="importance-badge baja">Baja</span></td>
+          </tr>
+          <tr>
+            <td>
+              <div class="color-swatch" style="background-color: #d3daa6"></div>
+              <span>Navbar disabled</span>
+            </td>
+            <td>#d3daa6</td>
+            <td>Enlaces deshabilitados</td>
+            <td>Estado</td>
+            <td><span class="importance-badge baja">Baja</span></td>
+          </tr>
+          <tr>
+            <td>
+              <div class="color-swatch" style="background-color: #3a2d20"></div>
+              <span>Borde libro</span>
+            </td>
+            <td>#3a2d20</td>
+            <td>Borde decorativo</td>
+            <td>Decorativo</td>
+            <td><span class="importance-badge baja">Baja</span></td>
+          </tr>
+          <tr>
+            <td>
+              <div class="color-swatch" style="background-color: #f0e6d3"></div>
+              <span>Costura libro</span>
+            </td>
+            <td>#f0e6d3</td>
+            <td>Efecto de costura</td>
+            <td>Decorativo</td>
+            <td><span class="importance-badge baja">Baja</span></td>
+          </tr>
+          <tr>
+            <td>
+              <div class="color-swatch" style="background-color: #a83843"></div>
+              <span>Detalle cinta</span>
+            </td>
+            <td>#a83843</td>
+            <td>Detalle decorativo</td>
+            <td>Decorativo</td>
+            <td><span class="importance-badge baja">Baja</span></td>
+          </tr>
+          <tr>
+            <td>
+              <div class="color-swatch" style="background-color: #94a5b3"></div>
+              <span>Fase lunar 1</span>
+            </td>
+            <td>#94a5b3</td>
+            <td>Fase lunar inicial</td>
+            <td>Estado</td>
+            <td><span class="importance-badge baja">Baja</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div style="margin-top: 2rem; color: #666; font-size: 0.9em">
+        <p>
+          🔹 Los colores se muestran con su swatch (Representación visual)
+          representativo y codificación HEX
+        </p>
+        <p>
+          🔸 Importancia:
+          <span class="importance-badge alta">Alta</span>
+          <span class="importance-badge media">Media</span>
+          <span class="importance-badge baja">Baja</span>
+        </p>
+      </div>
+    </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const table = document.getElementById("sortableTable");
+        const headers = table.querySelectorAll("th");
+        let currentSort = { column: null, direction: "asc" };
+
+        headers.forEach((header, index) => {
+          header.classList.add("sortable-header");
+          header.innerHTML += `<span class="sort-arrow"></span>`;
+
+          header.addEventListener("click", () => {
+            const isSameColumn = currentSort.column === index;
+            const newDirection =
+              isSameColumn && currentSort.direction === "asc" ? "desc" : "asc";
+
+            // Resetear clases de ordenamiento
+            headers.forEach((h) => h.classList.remove("asc", "desc"));
+
+            // Actualizar estado
+            currentSort = {
+              column: index,
+              direction: newDirection,
+            };
+
+            // Aplicar clases de ordenamiento
+            header.classList.add(newDirection);
+
+            // Ordenar la tabla
+            sortTable(index, newDirection);
+          });
+        });
+
+        const getCellValue = (row, index) => {
+          const cell = row.children[index];
+          if (index === 0) return cell.textContent.trim(); // Variable/Color
+          if (index === 4) {
+            // Importancia
+            return Array.from(
+              cell.querySelector(".importance-badge").classList
+            ).find((c) => c === "alta" || c === "media" || c === "baja");
+          }
+          return cell.textContent.trim();
+        };
+
+        const sortTable = (column, direction) => {
+          const tbody = table.querySelector("tbody");
+          const rows = Array.from(tbody.querySelectorAll("tr"));
+
+          rows.sort((a, b) => {
+            const aValue = getCellValue(a, column);
+            const bValue = getCellValue(b, column);
+
+            // Orden especial para importancia
+            if (column === 4) {
+              const order = { alta: 3, media: 2, baja: 1 };
+              return direction === "asc"
+                ? order[aValue] - order[bValue]
+                : order[bValue] - order[aValue];
+            }
+
+            // Orden por defecto
+            if (aValue < bValue) return direction === "asc" ? -1 : 1;
+            if (aValue > bValue) return direction === "asc" ? 1 : -1;
+            return 0;
+          });
+
+          // Limpiar y reinsertar filas ordenadas
+          rows.forEach((row) => tbody.appendChild(row));
+        };
+      });
+    </script>
+  </body>
+</html>

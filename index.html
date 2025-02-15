@@ -4,202 +4,194 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Guía de Majora's Mask - Principal</title>
-    <!-- Fuente -->
+    
+    <!-- Meta datos accesibles -->
+    <meta name="description" content="Guía completa y accesible de The Legend of Zelda: Majora's Mask">
+    
+    <!-- Fuentes -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap" rel="stylesheet" />
+    
     <!-- FontAwesome -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    
     <!-- Estilo Personalizado -->
     <link rel="stylesheet" href="css/style.css" />
-
+    
+    <!-- Scripts -->
     <script src="js/cargarEncPie.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/iniToolTips.js"></script>
-
-    <!-- Añadir animate.css -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-    />
+    <script src="js/global-audio.js"></script>
+    
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   </head>
   <body class="d-flex flex-column">
-    <!-- Header -->
-    <div id="header"></div>
+    <!-- Enlace para saltar navegación -->
+    <a href="#main-content" class="skip-link visually-hidden-focusable">Saltar al contenido principal</a>
 
-    <!-- Reproductor de música global -->
-    <div id="music-player" aria-live="polite">
-      <button
-        id="globalMusicToggle"
-        class="music-toggle"
-        aria-label="Control de música"
-        data-playing="false"
-      >
-        <i class="fas fa-volume-mute"></i>
+    <!-- Header semántico -->
+    <header id="header" role="banner"></header>
+
+    <!-- Reproductor de música accesible -->
+    <div id="music-player" aria-live="polite" role="region" aria-label="Reproductor de música">
+      <button id="globalMusicToggle" class="music-toggle" 
+              role="switch" 
+              aria-checked="false"
+              aria-label="Control de música: Silenciado"
+              data-playing="false">
+        <i class="fas fa-volume-mute" aria-hidden="true"></i>
         <span class="moon-indicator" aria-hidden="true"></span>
       </button>
-      <audio id="globalAudio" loop aria-hidden="true">
+      <audio id="globalAudio" loop aria-label="Música de fondo">
         <source src="" type="audio/mpeg" />
       </audio>
     </div>
 
-    <!-- Añade este script -->
-    <script src="js/global-audio.js"></script>
-
-    <!-- Hero Section con Carrusel Mejorado -->
-    <section class="hero-section">
-      <div
-        id="carouselMajorasMask"
-        class="carousel slide carousel-fade"
-        data-bs-ride="carousel"
-      >
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <video autoplay loop muted class="d-block w-100">
-              <source src="video/deku.webm" type="video/webm" alt="Video 1" />
-            </video>
-            <div class="carousel-overlay"></div>
-          </div>
-          <div class="carousel-item">
-            <video autoplay loop muted class="d-block w-100">
-              <source src="video/goron.webm" type="video/webm" alt="Video 1" />
-            </video>
-            <div class="carousel-overlay"></div>
-          </div>
-          <div class="carousel-item">
-            <video autoplay loop muted class="d-block w-100">
-              <source src="video/zora.webm" type="video/webm" alt="Video 1" />
-            </video>
-            <div class="carousel-overlay"></div>
-          </div>
-        </div>
-        <button
-          class="carousel-control-prev"
-          type="button"
-          data-bs-target="#carouselMajorasMask"
-          data-bs-slide="prev"
-        >
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Anterior</span>
-        </button>
-        <button
-          class="carousel-control-next"
-          type="button"
-          data-bs-target="#carouselMajorasMask"
-          data-bs-slide="next"
-        >
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Siguiente</span>
-        </button>
-      </div>
-      <div class="hero-content text-center">
-        <h1 class="main-title animate__animated animate__fadeInDown">
-          <span class="title-gradient">Guía Definitiva</span>
-          <small class="subtitle">Majora's Mask</small>
-        </h1>
-      </div>
-    </section>
-
-    <!-- Sección de Video Accesible -->
-    <section class="video-section py-5 bg-mask-overlay">
-      <div class="container">
-        <div class="mx-auto" style="max-width: 800px;">
-          <div class="section-header text-center mb-5 animate__animated animate__fadeIn">
-            <h2 class="section-title text-shadow">
-              El viaje comienza
-            </h2>
-          </div>
-          
-          <div class="video-container position-relative rounded-4 overflow-hidden shadow-lg">
-            <div class="ratio ratio-16x9">
-              <video 
-                class="video-player"
-                controls 
-                aria-labelledby="videoDesc"
-                poster="img/intro.png"
-              >
-                <source src="video/intro.webm" type="video/webm">
-                Tu navegador no soporta el elemento de video.
+    <!-- Contenido principal -->
+    <main id="main-content" role="main">
+      <!-- Hero Section con Carrusel -->
+      <section class="hero-section" aria-label="Presentación del juego">
+        <div id="carouselMajorasMask" class="carousel slide carousel-fade" data-bs-ride="carousel" role="group" aria-roledescription="carrusel">
+          <div class="carousel-inner" role="listbox">
+            <!-- Items del carrusel -->
+            <div class="carousel-item active" role="option" aria-current="true">
+              <video autoplay loop muted class="d-block w-100" aria-hidden="true" tabindex="-1">
+                <source src="video/deku.webm" type="video/webm" />
               </video>
+              <div class="carousel-overlay"></div>
             </div>
-            <div class="video-overlay"></div>
+            <div class="carousel-item" role="option">
+              <video autoplay loop muted class="d-block w-100" aria-hidden="true" tabindex="-1">
+                <source src="video/goron.webm" type="video/webm" />
+              </video>
+              <div class="carousel-overlay"></div>
+            </div>
+            <div class="carousel-item" role="option">
+              <video autoplay loop muted class="d-block w-100" aria-hidden="true" tabindex="-1">
+                <source src="video/zora.webm" type="video/webm" />
+              </video>
+              <div class="carousel-overlay"></div>
+            </div>
           </div>
-          <p id="videoDesc" class="video-description mt-3 text-center">
-            <span class="visually-hidden">Resumen del juego The Legend of Zelda: Majora's Mask mostrando gameplay, personajes principales y elementos clave de la trama.</span>
-          </p>
+          <!-- Controles del carrusel -->
+          <button class="carousel-control-prev" type="button" 
+                  data-bs-target="#carouselMajorasMask" 
+                  data-bs-slide="prev"
+                  aria-label="Diapositiva anterior">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Anterior</span>
+          </button>
+          <button class="carousel-control-next" type="button" 
+                  data-bs-target="#carouselMajorasMask" 
+                  data-bs-slide="next"
+                  aria-label="Diapositiva siguiente">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Siguiente</span>
+          </button>
         </div>
-      </div>
-    </section>
+        <div class="hero-content text-center">
+          <h1 class="main-title animate__animated animate__fadeInDown">
+            <span class="title-gradient">Guía Definitiva</span>
+            <small class="subtitle" role="doc-subtitle">Majora's Mask</small>
+          </h1>
+        </div>
+      </section>
 
-    <!-- Sección de Tarjetas Mejorada -->
-    <section class="features-section py-5">
-      <div class="container">
-        <div class="row g-4">
-          <!-- Tarjeta 1 -->
-          <div class="col-lg-4">
-            <div class="feature-card">
-              <div class="card-image">
-                <img src="img/c1.jpg" alt="Máscaras del juego" />
-              </div>
-              <div class="card-content">
-                <h3>Descubre las Máscaras</h3>
-                <p>
-                  Explora las misteriosas máscaras y aprende cómo obtenerlas.
-                </p>
-                <a href="mascaras.html" class="cta-button">
-                  Ver Máscaras
-                  <i class="fas fa-arrow-right"></i>
-                </a>
-              </div>
+      <!-- Sección de Video -->
+      <section class="video-section py-5 bg-mask-overlay" aria-labelledby="videoHeading">
+        <div class="container">
+          <div class="mx-auto" style="max-width: 800px;">
+            <div class="section-header text-center mb-5 animate__animated animate__fadeIn">
+              <h2 id="videoHeading" class="section-title text-shadow">El viaje comienza</h2>
             </div>
-          </div>
-          <!-- Tarjeta 2 -->
-          <div class="col-lg-4">
-            <div class="feature-card">
-              <div class="card-image">
-                <img src="img/c2.jpg" alt="Objetos del juego" />
+            <div class="video-container position-relative rounded-4 overflow-hidden shadow-lg">
+              <div class="ratio ratio-16x9">
+                <video class="video-player" controls 
+                       aria-labelledby="videoDesc"
+                       aria-describedby="videoInstructions"
+                       poster="img/intro.png">
+                  <source src="video/intro.webm" type="video/webm">
+                  Tu navegador no soporta el elemento de video.
+                  <track kind="captions" src="vtt/intro.vtt" srclang="es" label="Español">
+                </video>
               </div>
-              <div class="card-content">
-                <h3>Armas y Objetos</h3>
-                <p>Consigue herramientas esenciales para tu aventura.</p>
-                <a href="objetos1.html" class="cta-button">
-                  Ver Objetos
-                  <i class="fas fa-arrow-right"></i>
-                </a>
-              </div>
+              <div class="video-overlay"></div>
             </div>
-          </div>
-          <!-- Tarjeta 3 -->
-          <div class="col-lg-4">
-            <div class="feature-card">
-              <div class="card-image">
-                <img src="img/c3.jpg" alt="Trucos y consejos" />
-              </div>
-              <div class="card-content">
-                <h3>Trucos y Consejos</h3>
-                <p>
-                  Domina el tiempo y salva Termina con nuestras guías
-                  detalladas.
-                </p>
-                <a href="consejos.html" class="cta-button">
-                  Ver Consejos
-                  <i class="fas fa-arrow-right"></i>
-                </a>
-              </div>
+            <div class="video-descriptions">
+              <p id="videoDesc" class="visually-hidden">
+                Video introductorio de The Legend of Zelda: Majora's Mask mostrando escenas clave del juego, personajes principales y elementos de la trama.
+              </p>
+              <p id="videoInstructions" class="visually-hidden">
+                Use los controles de video para reproducir, pausar y ajustar el volumen. Subtítulos disponibles en español.
+              </p>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Footer -->
-    <div id="footer"></div>
+      <!-- Sección de Tarjetas -->
+      <section class="features-section py-5" aria-labelledby="featuresHeading">
+        <div class="container">
+          <h2 id="featuresHeading" class="visually-hidden">Características principales de la guía</h2>
+          <div class="row g-4">
+            <!-- Tarjeta 1 -->
+            <div class="col-lg-4">
+              <article class="feature-card" role="article" aria-labelledby="maskCardTitle">
+                <div class="card-image">
+                  <img src="img/c1.jpg" alt="" role="presentation" aria-hidden="true" />
+                </div>
+                <div class="card-content">
+                  <h3 id="maskCardTitle">Descubre las Máscaras</h3>
+                  <p>Explora las misteriosas máscaras y aprende cómo obtenerlas.</p>
+                  <a href="mascaras.html" class="cta-button" aria-label="Ver detalles sobre máscaras">
+                    Ver Máscaras
+                    <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                  </a>
+                </div>
+              </article>
+            </div>
+            <!-- Tarjeta 2 -->
+            <div class="col-lg-4">
+              <article class="feature-card" role="article" aria-labelledby="itemsCardTitle">
+                <div class="card-image">
+                  <img src="img/c2.jpg" alt="" role="presentation" aria-hidden="true" />
+                </div>
+                <div class="card-content">
+                  <h3 id="itemsCardTitle">Armas y Objetos</h3>
+                  <p>Consigue herramientas esenciales para tu aventura.</p>
+                  <a href="objetos1.html" class="cta-button" aria-label="Ver detalles sobre armas y objetos">
+                    Ver Objetos
+                    <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                  </a>
+                </div>
+              </article>
+            </div>
+            <!-- Tarjeta 3 -->
+            <div class="col-lg-4">
+              <article class="feature-card" role="article" aria-labelledby="tipsCardTitle">
+                <div class="card-image">
+                  <img src="img/c3.jpg" alt="" role="presentation" aria-hidden="true" />
+                </div>
+                <div class="card-content">
+                  <h3 id="tipsCardTitle">Trucos y Consejos</h3>
+                  <p>Domina el tiempo y salva Termina con nuestras guías detalladas.</p>
+                  <a href="consejos.html" class="cta-button" aria-label="Ver consejos y trucos">
+                    Ver Consejos
+                    <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                  </a>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer semántico -->
+    <footer id="footer" role="contentinfo"></footer>
 
     <!-- Scripts -->
     <script>
@@ -210,9 +202,13 @@
       });
     </script>
     <script src="js/backtotop.js"></script>
-    <!-- Botón flotante -->
-    <button id="backToTop" class="back-to-top-btn" aria-label="Volver arriba">
-      <i class="fas fa-chevron-up"></i>
+    
+    <!-- Botón flotante accesible -->
+    <button id="backToTop" class="back-to-top-btn" 
+            aria-label="Volver arriba"
+            aria-keyshortcuts="End"
+            title="Volver al inicio (Tecla: Fin)">
+      <i class="fas fa-chevron-up" aria-hidden="true"></i>
     </button>
   </body>
 </html>

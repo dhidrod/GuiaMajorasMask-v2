@@ -1,15 +1,21 @@
-@import "../../node_modules/bootstrap/scss/functions";
 
-// Colores de Bootstrap Personalizados
+// Importar fuentes
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap");
+
+// Colores personalizados
 $primary: #aab656;
 $secondary: #446a39;
 $success: #66b656;
 $info: #b69c56;
-$info: #e3b944;
 $warning: #b11c7f;
 $danger: #e66007;
 $light: #f8f9fa;
 $dark: #343a40;
+
+// Configuración de Bootstrap
+$body-bg: #121212;
+$body-color: #f8f9fa;
+$enable-gradients: false;
 
 // Tooltips
 $tooltip-bg: #aab656;
@@ -41,19 +47,13 @@ $navbar-dark-color: #b69c56;
 $navbar-dark-hover-color: #66b656;
 $navbar-dark-active-color: #aab656;
 $navbar-dark-disabled-color: #d3daa6;
-
 $nav-link-font-size: 20px;
-
 $dropdown-link-color: #b69c56;
 $dropdown-link-hover-color: #66b656;
 $dropdown-link-hover-bg: #2b3129;
 
 // Formulario
 $input-bg: #333331;
-
-$form-file-button-color: #2b3129;
-$form-file-button-bg: #b69c56;
-$form-file-button-hover-bg: #e4ca80;
 
 // Pestañas
 $nav-tabs-border-color: #b69c56;
@@ -63,11 +63,24 @@ $nav-tabs-link-hover-border-color: #d3daa6;
 $nav-link-color: #868d56;
 $nav-link-hover-color: #aab656;
 
-// Fuente
-// Importar fuente
-@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap");
+.nav-pills .nav-link {
+    color: #b69c56 !important;
+}
 
-// Configurar fuente base
+.nav-pills .nav-link.active,
+.show > .nav-pills .nav-link {
+    background: #b69c56 !important;
+    color: #2b3129 !important;
+}
+
+// Importar Bootstrap SCSS
+@import "../../node_modules/bootstrap/scss/functions";
+@import "../../node_modules/bootstrap/scss/variables";
+@import "../../node_modules/bootstrap/scss/mixins";
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+
+// Fuente
 body, li {
   font-family: "Cinzel", serif;
 }
@@ -100,15 +113,7 @@ background-color: #aab656;
 color: #2b3129;
 }
 
-$body-bg: #121212;
-$body-color: #f8f9fa;
-
-$enable-gradients: false;
-
-@import "../../node_modules/bootstrap/scss/variables";
-@import "../../node_modules/bootstrap/scss/mixins";
-
-// Colores personalizados
+// Colores personalizados adicionales
 $col-azul: #2b315d;
 $col-azul2: #525ca6;
 $col-azul3: #444b7c;
@@ -118,9 +123,6 @@ $col-naranja3: #8b7152;
 $col-rosa: #97516b;
 $col-rosa2: #a57c82;
 $col-rosa3: #78575c;
-
-// Importar Bootstrap
-@import "../../node_modules/bootstrap/scss/bootstrap";
 
 // Estilo para las columnas de la tabla
 /*
@@ -264,6 +266,7 @@ body {
 //Tarjetas
 .card-body {
   color: #b69c56;
+  font-weight: bold;
 }
 
 .card-footer button,
